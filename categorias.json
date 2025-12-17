@@ -1,0 +1,4130 @@
+[
+    {
+        "id": "EST_-1",
+        "categoria": "TODOS os Documentos Estruturados",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "EST_3",
+        "categoria": "ITR - Informações Trimestrais",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "EST_2",
+        "categoria": "FRE - Formulário de Referência",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "EST_11",
+        "categoria": "Informe do Código de Governança",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "EST_1",
+        "categoria": "FCA - Formulário Cadastral",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "EST_4",
+        "categoria": "DFP - Demonstrações Financeiras Padronizadas",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "EST_6",
+        "categoria": "Informe Trimestral de Securitizadora",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "EST_13",
+        "categoria": "IAN - Informações Anuais",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_-1",
+        "categoria": "TODOS os Documentos com Informações Eventuais",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_44_-1_-1",
+        "categoria": "Acordo de Acionistas",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_1_-1_-1",
+        "categoria": "Assembleia",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_1_-1_4",
+        "categoria": "Assembleia",
+        "tipo": "TODOS",
+        "especie": "Ata"
+    },
+    {
+        "id": "IPE_1_-1_54",
+        "categoria": "Assembleia",
+        "tipo": "TODOS",
+        "especie": "Boletim de voto a distância"
+    },
+    {
+        "id": "IPE_1_-1_28",
+        "categoria": "Assembleia",
+        "tipo": "TODOS",
+        "especie": "Edital de Convocação"
+    },
+    {
+        "id": "IPE_1_-1_61",
+        "categoria": "Assembleia",
+        "tipo": "TODOS",
+        "especie": "Instrução de voto"
+    },
+    {
+        "id": "IPE_1_-1_6",
+        "categoria": "Assembleia",
+        "tipo": "TODOS",
+        "especie": "Justificação de Incorporação, Cisão ou Fusão"
+    },
+    {
+        "id": "IPE_1_-1_44",
+        "categoria": "Assembleia",
+        "tipo": "TODOS",
+        "especie": "Manual para participação"
+    },
+    {
+        "id": "IPE_1_-1_53",
+        "categoria": "Assembleia",
+        "tipo": "TODOS",
+        "especie": "Mapa final de votação"
+    },
+    {
+        "id": "IPE_1_-1_56",
+        "categoria": "Assembleia",
+        "tipo": "TODOS",
+        "especie": "Mapa Final de Votação Detalhado"
+    },
+    {
+        "id": "IPE_1_-1_72",
+        "categoria": "Assembleia",
+        "tipo": "TODOS",
+        "especie": "Mapa Final de Votação Resumido"
+    },
+    {
+        "id": "IPE_1_-1_57",
+        "categoria": "Assembleia",
+        "tipo": "TODOS",
+        "especie": "Mapa Final de Votação Sintético"
+    },
+    {
+        "id": "IPE_1_-1_52",
+        "categoria": "Assembleia",
+        "tipo": "TODOS",
+        "especie": "Mapa Sintético Consolidado"
+    },
+    {
+        "id": "IPE_1_-1_51",
+        "categoria": "Assembleia",
+        "tipo": "TODOS",
+        "especie": "Mapa Sintético do Depositário Central"
+    },
+    {
+        "id": "IPE_1_-1_50",
+        "categoria": "Assembleia",
+        "tipo": "TODOS",
+        "especie": "Mapa Sintético do Escriturador"
+    },
+    {
+        "id": "IPE_1_-1_73",
+        "categoria": "Assembleia",
+        "tipo": "TODOS",
+        "especie": "Mapa Sintético dos votos enviados diretamente à Companhia"
+    },
+    {
+        "id": "IPE_1_-1_41",
+        "categoria": "Assembleia",
+        "tipo": "TODOS",
+        "especie": "Material referente a pedidos públicos de procuração"
+    },
+    {
+        "id": "IPE_1_-1_2",
+        "categoria": "Assembleia",
+        "tipo": "TODOS",
+        "especie": "Proposta da Administração"
+    },
+    {
+        "id": "IPE_1_-1_32",
+        "categoria": "Assembleia",
+        "tipo": "TODOS",
+        "especie": "Proposta para a assembleia"
+    },
+    {
+        "id": "IPE_1_-1_5",
+        "categoria": "Assembleia",
+        "tipo": "TODOS",
+        "especie": "Protocolo de Incorporação, Cisão ou Fusão"
+    },
+    {
+        "id": "IPE_1_-1_55",
+        "categoria": "Assembleia",
+        "tipo": "TODOS",
+        "especie": "Protocolo e Justificação de Incorporação, Fusão ou Cisão"
+    },
+    {
+        "id": "IPE_1_-1_3",
+        "categoria": "Assembleia",
+        "tipo": "TODOS",
+        "especie": "Sumário das Decisões"
+    },
+    {
+        "id": "IPE_1_98_-1",
+        "categoria": "Assembleia",
+        "tipo": "AGCRA",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_1_98_4",
+        "categoria": "Assembleia",
+        "tipo": "AGCRA",
+        "especie": "Ata"
+    },
+    {
+        "id": "IPE_1_98_28",
+        "categoria": "Assembleia",
+        "tipo": "AGCRA",
+        "especie": "Edital de Convocação"
+    },
+    {
+        "id": "IPE_1_98_32",
+        "categoria": "Assembleia",
+        "tipo": "AGCRA",
+        "especie": "Proposta para a assembleia"
+    },
+    {
+        "id": "IPE_1_98_3",
+        "categoria": "Assembleia",
+        "tipo": "AGCRA",
+        "especie": "Sumário das Decisões"
+    },
+    {
+        "id": "IPE_1_97_-1",
+        "categoria": "Assembleia",
+        "tipo": "AGCRI",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_1_97_4",
+        "categoria": "Assembleia",
+        "tipo": "AGCRI",
+        "especie": "Ata"
+    },
+    {
+        "id": "IPE_1_97_28",
+        "categoria": "Assembleia",
+        "tipo": "AGCRI",
+        "especie": "Edital de Convocação"
+    },
+    {
+        "id": "IPE_1_97_32",
+        "categoria": "Assembleia",
+        "tipo": "AGCRI",
+        "especie": "Proposta para a assembleia"
+    },
+    {
+        "id": "IPE_1_97_3",
+        "categoria": "Assembleia",
+        "tipo": "AGCRI",
+        "especie": "Sumário das Decisões"
+    },
+    {
+        "id": "IPE_1_5_-1",
+        "categoria": "Assembleia",
+        "tipo": "AGDEB",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_1_5_4",
+        "categoria": "Assembleia",
+        "tipo": "AGDEB",
+        "especie": "Ata"
+    },
+    {
+        "id": "IPE_1_5_28",
+        "categoria": "Assembleia",
+        "tipo": "AGDEB",
+        "especie": "Edital de Convocação"
+    },
+    {
+        "id": "IPE_1_5_61",
+        "categoria": "Assembleia",
+        "tipo": "AGDEB",
+        "especie": "Instrução de voto"
+    },
+    {
+        "id": "IPE_1_5_44",
+        "categoria": "Assembleia",
+        "tipo": "AGDEB",
+        "especie": "Manual para participação"
+    },
+    {
+        "id": "IPE_1_5_2",
+        "categoria": "Assembleia",
+        "tipo": "AGDEB",
+        "especie": "Proposta da Administração"
+    },
+    {
+        "id": "IPE_1_5_3",
+        "categoria": "Assembleia",
+        "tipo": "AGDEB",
+        "especie": "Sumário das Decisões"
+    },
+    {
+        "id": "IPE_1_1_-1",
+        "categoria": "Assembleia",
+        "tipo": "AGE",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_1_1_4",
+        "categoria": "Assembleia",
+        "tipo": "AGE",
+        "especie": "Ata"
+    },
+    {
+        "id": "IPE_1_1_54",
+        "categoria": "Assembleia",
+        "tipo": "AGE",
+        "especie": "Boletim de voto a distância"
+    },
+    {
+        "id": "IPE_1_1_28",
+        "categoria": "Assembleia",
+        "tipo": "AGE",
+        "especie": "Edital de Convocação"
+    },
+    {
+        "id": "IPE_1_1_6",
+        "categoria": "Assembleia",
+        "tipo": "AGE",
+        "especie": "Justificação de Incorporação, Cisão ou Fusão"
+    },
+    {
+        "id": "IPE_1_1_44",
+        "categoria": "Assembleia",
+        "tipo": "AGE",
+        "especie": "Manual para participação"
+    },
+    {
+        "id": "IPE_1_1_53",
+        "categoria": "Assembleia",
+        "tipo": "AGE",
+        "especie": "Mapa final de votação"
+    },
+    {
+        "id": "IPE_1_1_56",
+        "categoria": "Assembleia",
+        "tipo": "AGE",
+        "especie": "Mapa Final de Votação Detalhado"
+    },
+    {
+        "id": "IPE_1_1_72",
+        "categoria": "Assembleia",
+        "tipo": "AGE",
+        "especie": "Mapa Final de Votação Resumido"
+    },
+    {
+        "id": "IPE_1_1_57",
+        "categoria": "Assembleia",
+        "tipo": "AGE",
+        "especie": "Mapa Final de Votação Sintético"
+    },
+    {
+        "id": "IPE_1_1_52",
+        "categoria": "Assembleia",
+        "tipo": "AGE",
+        "especie": "Mapa Sintético Consolidado"
+    },
+    {
+        "id": "IPE_1_1_51",
+        "categoria": "Assembleia",
+        "tipo": "AGE",
+        "especie": "Mapa Sintético do Depositário Central"
+    },
+    {
+        "id": "IPE_1_1_50",
+        "categoria": "Assembleia",
+        "tipo": "AGE",
+        "especie": "Mapa Sintético do Escriturador"
+    },
+    {
+        "id": "IPE_1_1_73",
+        "categoria": "Assembleia",
+        "tipo": "AGE",
+        "especie": "Mapa Sintético dos votos enviados diretamente à Companhia"
+    },
+    {
+        "id": "IPE_1_1_41",
+        "categoria": "Assembleia",
+        "tipo": "AGE",
+        "especie": "Material referente a pedidos públicos de procuração"
+    },
+    {
+        "id": "IPE_1_1_2",
+        "categoria": "Assembleia",
+        "tipo": "AGE",
+        "especie": "Proposta da Administração"
+    },
+    {
+        "id": "IPE_1_1_5",
+        "categoria": "Assembleia",
+        "tipo": "AGE",
+        "especie": "Protocolo de Incorporação, Cisão ou Fusão"
+    },
+    {
+        "id": "IPE_1_1_55",
+        "categoria": "Assembleia",
+        "tipo": "AGE",
+        "especie": "Protocolo e Justificação de Incorporação, Fusão ou Cisão"
+    },
+    {
+        "id": "IPE_1_1_3",
+        "categoria": "Assembleia",
+        "tipo": "AGE",
+        "especie": "Sumário das Decisões"
+    },
+    {
+        "id": "IPE_1_4_-1",
+        "categoria": "Assembleia",
+        "tipo": "AGESP",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_1_4_4",
+        "categoria": "Assembleia",
+        "tipo": "AGESP",
+        "especie": "Ata"
+    },
+    {
+        "id": "IPE_1_4_54",
+        "categoria": "Assembleia",
+        "tipo": "AGESP",
+        "especie": "Boletim de voto a distância"
+    },
+    {
+        "id": "IPE_1_4_28",
+        "categoria": "Assembleia",
+        "tipo": "AGESP",
+        "especie": "Edital de Convocação"
+    },
+    {
+        "id": "IPE_1_4_44",
+        "categoria": "Assembleia",
+        "tipo": "AGESP",
+        "especie": "Manual para participação"
+    },
+    {
+        "id": "IPE_1_4_53",
+        "categoria": "Assembleia",
+        "tipo": "AGESP",
+        "especie": "Mapa final de votação"
+    },
+    {
+        "id": "IPE_1_4_56",
+        "categoria": "Assembleia",
+        "tipo": "AGESP",
+        "especie": "Mapa Final de Votação Detalhado"
+    },
+    {
+        "id": "IPE_1_4_57",
+        "categoria": "Assembleia",
+        "tipo": "AGESP",
+        "especie": "Mapa Final de Votação Sintético"
+    },
+    {
+        "id": "IPE_1_4_52",
+        "categoria": "Assembleia",
+        "tipo": "AGESP",
+        "especie": "Mapa Sintético Consolidado"
+    },
+    {
+        "id": "IPE_1_4_50",
+        "categoria": "Assembleia",
+        "tipo": "AGESP",
+        "especie": "Mapa Sintético do Escriturador"
+    },
+    {
+        "id": "IPE_1_4_41",
+        "categoria": "Assembleia",
+        "tipo": "AGESP",
+        "especie": "Material referente a pedidos públicos de procuração"
+    },
+    {
+        "id": "IPE_1_4_2",
+        "categoria": "Assembleia",
+        "tipo": "AGESP",
+        "especie": "Proposta da Administração"
+    },
+    {
+        "id": "IPE_1_4_3",
+        "categoria": "Assembleia",
+        "tipo": "AGESP",
+        "especie": "Sumário das Decisões"
+    },
+    {
+        "id": "IPE_1_2_-1",
+        "categoria": "Assembleia",
+        "tipo": "AGO",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_1_2_4",
+        "categoria": "Assembleia",
+        "tipo": "AGO",
+        "especie": "Ata"
+    },
+    {
+        "id": "IPE_1_2_54",
+        "categoria": "Assembleia",
+        "tipo": "AGO",
+        "especie": "Boletim de voto a distância"
+    },
+    {
+        "id": "IPE_1_2_28",
+        "categoria": "Assembleia",
+        "tipo": "AGO",
+        "especie": "Edital de Convocação"
+    },
+    {
+        "id": "IPE_1_2_44",
+        "categoria": "Assembleia",
+        "tipo": "AGO",
+        "especie": "Manual para participação"
+    },
+    {
+        "id": "IPE_1_2_53",
+        "categoria": "Assembleia",
+        "tipo": "AGO",
+        "especie": "Mapa final de votação"
+    },
+    {
+        "id": "IPE_1_2_56",
+        "categoria": "Assembleia",
+        "tipo": "AGO",
+        "especie": "Mapa Final de Votação Detalhado"
+    },
+    {
+        "id": "IPE_1_2_72",
+        "categoria": "Assembleia",
+        "tipo": "AGO",
+        "especie": "Mapa Final de Votação Resumido"
+    },
+    {
+        "id": "IPE_1_2_57",
+        "categoria": "Assembleia",
+        "tipo": "AGO",
+        "especie": "Mapa Final de Votação Sintético"
+    },
+    {
+        "id": "IPE_1_2_52",
+        "categoria": "Assembleia",
+        "tipo": "AGO",
+        "especie": "Mapa Sintético Consolidado"
+    },
+    {
+        "id": "IPE_1_2_51",
+        "categoria": "Assembleia",
+        "tipo": "AGO",
+        "especie": "Mapa Sintético do Depositário Central"
+    },
+    {
+        "id": "IPE_1_2_50",
+        "categoria": "Assembleia",
+        "tipo": "AGO",
+        "especie": "Mapa Sintético do Escriturador"
+    },
+    {
+        "id": "IPE_1_2_73",
+        "categoria": "Assembleia",
+        "tipo": "AGO",
+        "especie": "Mapa Sintético dos votos enviados diretamente à Companhia"
+    },
+    {
+        "id": "IPE_1_2_41",
+        "categoria": "Assembleia",
+        "tipo": "AGO",
+        "especie": "Material referente a pedidos públicos de procuração"
+    },
+    {
+        "id": "IPE_1_2_2",
+        "categoria": "Assembleia",
+        "tipo": "AGO",
+        "especie": "Proposta da Administração"
+    },
+    {
+        "id": "IPE_1_2_3",
+        "categoria": "Assembleia",
+        "tipo": "AGO",
+        "especie": "Sumário das Decisões"
+    },
+    {
+        "id": "IPE_1_3_-1",
+        "categoria": "Assembleia",
+        "tipo": "AGO/E",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_1_3_4",
+        "categoria": "Assembleia",
+        "tipo": "AGO/E",
+        "especie": "Ata"
+    },
+    {
+        "id": "IPE_1_3_54",
+        "categoria": "Assembleia",
+        "tipo": "AGO/E",
+        "especie": "Boletim de voto a distância"
+    },
+    {
+        "id": "IPE_1_3_28",
+        "categoria": "Assembleia",
+        "tipo": "AGO/E",
+        "especie": "Edital de Convocação"
+    },
+    {
+        "id": "IPE_1_3_6",
+        "categoria": "Assembleia",
+        "tipo": "AGO/E",
+        "especie": "Justificação de Incorporação, Cisão ou Fusão"
+    },
+    {
+        "id": "IPE_1_3_44",
+        "categoria": "Assembleia",
+        "tipo": "AGO/E",
+        "especie": "Manual para participação"
+    },
+    {
+        "id": "IPE_1_3_53",
+        "categoria": "Assembleia",
+        "tipo": "AGO/E",
+        "especie": "Mapa final de votação"
+    },
+    {
+        "id": "IPE_1_3_56",
+        "categoria": "Assembleia",
+        "tipo": "AGO/E",
+        "especie": "Mapa Final de Votação Detalhado"
+    },
+    {
+        "id": "IPE_1_3_72",
+        "categoria": "Assembleia",
+        "tipo": "AGO/E",
+        "especie": "Mapa Final de Votação Resumido"
+    },
+    {
+        "id": "IPE_1_3_57",
+        "categoria": "Assembleia",
+        "tipo": "AGO/E",
+        "especie": "Mapa Final de Votação Sintético"
+    },
+    {
+        "id": "IPE_1_3_52",
+        "categoria": "Assembleia",
+        "tipo": "AGO/E",
+        "especie": "Mapa Sintético Consolidado"
+    },
+    {
+        "id": "IPE_1_3_51",
+        "categoria": "Assembleia",
+        "tipo": "AGO/E",
+        "especie": "Mapa Sintético do Depositário Central"
+    },
+    {
+        "id": "IPE_1_3_50",
+        "categoria": "Assembleia",
+        "tipo": "AGO/E",
+        "especie": "Mapa Sintético do Escriturador"
+    },
+    {
+        "id": "IPE_1_3_73",
+        "categoria": "Assembleia",
+        "tipo": "AGO/E",
+        "especie": "Mapa Sintético dos votos enviados diretamente à Companhia"
+    },
+    {
+        "id": "IPE_1_3_41",
+        "categoria": "Assembleia",
+        "tipo": "AGO/E",
+        "especie": "Material referente a pedidos públicos de procuração"
+    },
+    {
+        "id": "IPE_1_3_2",
+        "categoria": "Assembleia",
+        "tipo": "AGO/E",
+        "especie": "Proposta da Administração"
+    },
+    {
+        "id": "IPE_1_3_5",
+        "categoria": "Assembleia",
+        "tipo": "AGO/E",
+        "especie": "Protocolo de Incorporação, Cisão ou Fusão"
+    },
+    {
+        "id": "IPE_1_3_55",
+        "categoria": "Assembleia",
+        "tipo": "AGO/E",
+        "especie": "Protocolo e Justificação de Incorporação, Fusão ou Cisão"
+    },
+    {
+        "id": "IPE_1_3_3",
+        "categoria": "Assembleia",
+        "tipo": "AGO/E",
+        "especie": "Sumário das Decisões"
+    },
+    {
+        "id": "IPE_56_-1_-1",
+        "categoria": "Ato Homologatório emitido pelo Banco Central",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_3_-1_-1",
+        "categoria": "Aviso aos Acionistas",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_3_103_-1",
+        "categoria": "Aviso aos Acionistas",
+        "tipo": "Adoção do processo de voto múltiplo",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_3_104_-1",
+        "categoria": "Aviso aos Acionistas",
+        "tipo": "Adoção do voto a distância",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_3_96_-1",
+        "categoria": "Aviso aos Acionistas",
+        "tipo": "Aumento de capital por subscrição privada deliberado em RCA",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_3_83_-1",
+        "categoria": "Aviso aos Acionistas",
+        "tipo": "Comunicado art.133 da Lei nº6.404/76",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_3_105_-1",
+        "categoria": "Aviso aos Acionistas",
+        "tipo": "Data prevista para a assembleia",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_3_84_-1",
+        "categoria": "Aviso aos Acionistas",
+        "tipo": "Outros avisos",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_3_106_-1",
+        "categoria": "Aviso aos Acionistas",
+        "tipo": "Solicitação de acionista para o Boletim de Voto",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_48_-1_-1",
+        "categoria": "Aviso aos Debenturistas",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_45_-1_-1",
+        "categoria": "Balanço Social",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_73_-1_-1",
+        "categoria": "BDR Não Patrocinado - Descritivo Operacional do Programa",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_9_-1_-1",
+        "categoria": "Calendário de Eventos Corporativos",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_91_-1_-1",
+        "categoria": "Carta Anual de Governança Corporativa",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_91_113_-1",
+        "categoria": "Carta Anual de Governança Corporativa",
+        "tipo": "Carta Anual de Governança Corporativa (art. 8º, VIII da Lei 13.303/16",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_91_114_-1",
+        "categoria": "Carta Anual de Governança Corporativa",
+        "tipo": "Carta Anual de Políticas Públicas (art. 8º, I da Lei 13.303/16)",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_91_115_-1",
+        "categoria": "Carta Anual de Governança Corporativa",
+        "tipo": "Carta consolidada de políticas públicas e governança corporativa (Decreto Federal 8.945/16)",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_74_-1_-1",
+        "categoria": "Código de Conduta",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_106_-1_-1",
+        "categoria": "Comunicação sobre demandas societárias",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_80_-1_-1",
+        "categoria": "Comunicação sobre Transação entre Partes Relacionadas",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_6_-1_-1",
+        "categoria": "Comunicado ao Mercado",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_6_-1_30",
+        "categoria": "Comunicado ao Mercado",
+        "tipo": "TODOS",
+        "especie": "Declaração de Alienação de Participação Acionária Relevante"
+    },
+    {
+        "id": "IPE_6_-1_29",
+        "categoria": "Comunicado ao Mercado",
+        "tipo": "TODOS",
+        "especie": "Declaração de Aquisição de Participação Acionária Relevante"
+    },
+    {
+        "id": "IPE_6_87_-1",
+        "categoria": "Comunicado ao Mercado",
+        "tipo": "Apresentações a analistas/agentes do mercado",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_6_51_-1",
+        "categoria": "Comunicado ao Mercado",
+        "tipo": "Aquisição/Alienação de Participação Acionária Relevante",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_6_51_30",
+        "categoria": "Comunicado ao Mercado",
+        "tipo": "Aquisição/Alienação de Participação Acionária Relevante",
+        "especie": "Declaração de Alienação de Participação Acionária Relevante"
+    },
+    {
+        "id": "IPE_6_51_29",
+        "categoria": "Comunicado ao Mercado",
+        "tipo": "Aquisição/Alienação de Participação Acionária Relevante",
+        "especie": "Declaração de Aquisição de Participação Acionária Relevante"
+    },
+    {
+        "id": "IPE_6_52_-1",
+        "categoria": "Comunicado ao Mercado",
+        "tipo": "Esclarecimentos Sobre Consultas CVM/BOVESPA",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_6_134_-1",
+        "categoria": "Comunicado ao Mercado",
+        "tipo": "Esclarecimentos sobre questionamentos da B3",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_6_112_-1",
+        "categoria": "Comunicado ao Mercado",
+        "tipo": "Esclarecimentos sobre questionamentos da CVM/B3",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_6_102_-1",
+        "categoria": "Comunicado ao Mercado",
+        "tipo": "Instalação, mudança ou dissolução do Comitê de Auditoria Estatutário",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_6_55_-1",
+        "categoria": "Comunicado ao Mercado",
+        "tipo": "Mudança de Auditor",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_6_53_-1",
+        "categoria": "Comunicado ao Mercado",
+        "tipo": "Outros Comunicados Não Considerados Fatos Relevantes",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_10_-1_-1",
+        "categoria": "Contratos com Partes Relacionadas",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_98_-1_-1",
+        "categoria": "Contratos de Indenidade",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_98_118_-1",
+        "categoria": "Contratos de Indenidade",
+        "tipo": "Contratos de indenidade e aditivos",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_98_119_-1",
+        "categoria": "Contratos de Indenidade",
+        "tipo": "Outros documentos relacionados a contratos de indenidade",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_69_-1_-1",
+        "categoria": "Convenção de grupos de sociedades",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_84_-1_-1",
+        "categoria": "Dados cadastrais de companhias incentivadas",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_7_-1_-1",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_7_-1_63",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "TODOS",
+        "especie": "Balanço Social"
+    },
+    {
+        "id": "IPE_7_-1_69",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "TODOS",
+        "especie": "Carve-out"
+    },
+    {
+        "id": "IPE_7_-1_67",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "TODOS",
+        "especie": "Combinadas"
+    },
+    {
+        "id": "IPE_7_-1_68",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "TODOS",
+        "especie": "Condensadas"
+    },
+    {
+        "id": "IPE_7_-1_36",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "TODOS",
+        "especie": "Demonstrações Financeiras com reconciliação para IFRS"
+    },
+    {
+        "id": "IPE_7_-1_35",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "TODOS",
+        "especie": "Demonstrações Financeiras com reconciliação para US GAAP"
+    },
+    {
+        "id": "IPE_7_-1_34",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "TODOS",
+        "especie": "Demonstrações Financeiras em IFRS"
+    },
+    {
+        "id": "IPE_7_-1_71",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "TODOS",
+        "especie": "Demonstrações Financeiras em Padrões Internacionais"
+    },
+    {
+        "id": "IPE_7_-1_33",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "TODOS",
+        "especie": "Demonstrações Financeiras em US GAAP"
+    },
+    {
+        "id": "IPE_7_-1_42",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "TODOS",
+        "especie": "DFs Mercosul com reconciliação para IFRS"
+    },
+    {
+        "id": "IPE_7_-1_64",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "TODOS",
+        "especie": "Especialmente preparadas para Registro Inicial"
+    },
+    {
+        "id": "IPE_7_-1_38",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "TODOS",
+        "especie": "Outros"
+    },
+    {
+        "id": "IPE_7_-1_65",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "TODOS",
+        "especie": "Pró-forma"
+    },
+    {
+        "id": "IPE_7_-1_70",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "TODOS",
+        "especie": "Regulatórias"
+    },
+    {
+        "id": "IPE_7_-1_66",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "TODOS",
+        "especie": "Separadas"
+    },
+    {
+        "id": "IPE_7_56_-1",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Balanço Social",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_7_57_-1",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Demonstração do Valor Adicionado",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_7_88_-1",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Demonstrações Financeiras Adicionais",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_7_88_63",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Demonstrações Financeiras Adicionais",
+        "especie": "Balanço Social"
+    },
+    {
+        "id": "IPE_7_88_69",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Demonstrações Financeiras Adicionais",
+        "especie": "Carve-out"
+    },
+    {
+        "id": "IPE_7_88_67",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Demonstrações Financeiras Adicionais",
+        "especie": "Combinadas"
+    },
+    {
+        "id": "IPE_7_88_68",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Demonstrações Financeiras Adicionais",
+        "especie": "Condensadas"
+    },
+    {
+        "id": "IPE_7_88_71",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Demonstrações Financeiras Adicionais",
+        "especie": "Demonstrações Financeiras em Padrões Internacionais"
+    },
+    {
+        "id": "IPE_7_88_64",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Demonstrações Financeiras Adicionais",
+        "especie": "Especialmente preparadas para Registro Inicial"
+    },
+    {
+        "id": "IPE_7_88_65",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Demonstrações Financeiras Adicionais",
+        "especie": "Pró-forma"
+    },
+    {
+        "id": "IPE_7_88_70",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Demonstrações Financeiras Adicionais",
+        "especie": "Regulatórias"
+    },
+    {
+        "id": "IPE_7_88_66",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Demonstrações Financeiras Adicionais",
+        "especie": "Separadas"
+    },
+    {
+        "id": "IPE_7_37_-1",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Demonstrações Financeiras Anuais Completas",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_7_42_-1",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Demonstrações Financeiras em Padrões Internacionais",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_7_42_36",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Demonstrações Financeiras em Padrões Internacionais",
+        "especie": "Demonstrações Financeiras com reconciliação para IFRS"
+    },
+    {
+        "id": "IPE_7_42_35",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Demonstrações Financeiras em Padrões Internacionais",
+        "especie": "Demonstrações Financeiras com reconciliação para US GAAP"
+    },
+    {
+        "id": "IPE_7_42_34",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Demonstrações Financeiras em Padrões Internacionais",
+        "especie": "Demonstrações Financeiras em IFRS"
+    },
+    {
+        "id": "IPE_7_42_33",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Demonstrações Financeiras em Padrões Internacionais",
+        "especie": "Demonstrações Financeiras em US GAAP"
+    },
+    {
+        "id": "IPE_7_42_42",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Demonstrações Financeiras em Padrões Internacionais",
+        "especie": "DFs Mercosul com reconciliação para IFRS"
+    },
+    {
+        "id": "IPE_7_42_38",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Demonstrações Financeiras em Padrões Internacionais",
+        "especie": "Outros"
+    },
+    {
+        "id": "IPE_7_45_-1",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Demonstrações Financeiras Especiais - Registro Inicial de Cia Aberta",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_7_46_-1",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Demonstrações Financeiras Intermediárias",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_7_46_42",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Demonstrações Financeiras Intermediárias",
+        "especie": "DFs Mercosul com reconciliação para IFRS"
+    },
+    {
+        "id": "IPE_7_20_-1",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Laudo de Avaliação",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_7_63_-1",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Notificação do agente fiduciário aos debenturistas",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_7_85_-1",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Plano de Investimento",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_7_29_-1",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Press-release",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_7_58_-1",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Relatório Anual",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_7_86_-1",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Relatório de Agência de Rating",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_7_30_-1",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Relatório de Agente Fiduciário",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_7_43_-1",
+        "categoria": "Dados Econômico-Financeiros",
+        "tipo": "Relatório de Análise Gerencial",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_111_-1_-1",
+        "categoria": "DF - Padrão Internacional",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_111_-1_71",
+        "categoria": "DF - Padrão Internacional",
+        "tipo": "TODOS",
+        "especie": "Demonstrações Financeiras em Padrões Internacionais"
+    },
+    {
+        "id": "IPE_111_42_-1",
+        "categoria": "DF - Padrão Internacional",
+        "tipo": "Demonstrações Financeiras em Padrões Internacionais",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_111_42_71",
+        "categoria": "DF - Padrão Internacional",
+        "tipo": "Demonstrações Financeiras em Padrões Internacionais",
+        "especie": "Demonstrações Financeiras em Padrões Internacionais"
+    },
+    {
+        "id": "IPE_101_-1_-1",
+        "categoria": "DF - Patrimônio separado",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_78_-1_-1",
+        "categoria": "Documentos de Oferta de Distribuição Pública",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_78_-1_49",
+        "categoria": "Documentos de Oferta de Distribuição Pública",
+        "tipo": "TODOS",
+        "especie": "Minuta de Prospecto Definitivo"
+    },
+    {
+        "id": "IPE_78_-1_48",
+        "categoria": "Documentos de Oferta de Distribuição Pública",
+        "tipo": "TODOS",
+        "especie": "Minuta de Prospecto Preliminar"
+    },
+    {
+        "id": "IPE_78_-1_46",
+        "categoria": "Documentos de Oferta de Distribuição Pública",
+        "tipo": "TODOS",
+        "especie": "Prospecto Definitivo"
+    },
+    {
+        "id": "IPE_78_-1_45",
+        "categoria": "Documentos de Oferta de Distribuição Pública",
+        "tipo": "TODOS",
+        "especie": "Prospecto Preliminar"
+    },
+    {
+        "id": "IPE_78_-1_47",
+        "categoria": "Documentos de Oferta de Distribuição Pública",
+        "tipo": "TODOS",
+        "especie": "Suplemento de Prospecto"
+    },
+    {
+        "id": "IPE_78_89_-1",
+        "categoria": "Documentos de Oferta de Distribuição Pública",
+        "tipo": "Anúncio de Encerramento de Distribuição Pública",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_78_90_-1",
+        "categoria": "Documentos de Oferta de Distribuição Pública",
+        "tipo": "Anúncio de Início de Distribuição Pública",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_78_91_-1",
+        "categoria": "Documentos de Oferta de Distribuição Pública",
+        "tipo": "Aviso ao Mercado",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_78_92_-1",
+        "categoria": "Documentos de Oferta de Distribuição Pública",
+        "tipo": "Comunicação de Modificação de Oferta",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_78_101_-1",
+        "categoria": "Documentos de Oferta de Distribuição Pública",
+        "tipo": "Comunicado de encerramento de oferta com esforços restritos",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_78_100_-1",
+        "categoria": "Documentos de Oferta de Distribuição Pública",
+        "tipo": "Comunicado de início de oferta com esforços restritos",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_78_93_-1",
+        "categoria": "Documentos de Oferta de Distribuição Pública",
+        "tipo": "Edital de Leilão de Ações",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_78_94_-1",
+        "categoria": "Documentos de Oferta de Distribuição Pública",
+        "tipo": "Informações sobre o Programa de Distribuição Contínua",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_78_140_-1",
+        "categoria": "Documentos de Oferta de Distribuição Pública",
+        "tipo": "Início e Encerramento de Oferta Direta realizada no FÁCIL",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_78_136_-1",
+        "categoria": "Documentos de Oferta de Distribuição Pública",
+        "tipo": "Lâmina de Oferta de Ações/Units",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_78_137_-1",
+        "categoria": "Documentos de Oferta de Distribuição Pública",
+        "tipo": "Lâmina de Oferta de Dívida",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_78_95_-1",
+        "categoria": "Documentos de Oferta de Distribuição Pública",
+        "tipo": "Prospecto de Distribuição Pública",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_78_95_49",
+        "categoria": "Documentos de Oferta de Distribuição Pública",
+        "tipo": "Prospecto de Distribuição Pública",
+        "especie": "Minuta de Prospecto Definitivo"
+    },
+    {
+        "id": "IPE_78_95_48",
+        "categoria": "Documentos de Oferta de Distribuição Pública",
+        "tipo": "Prospecto de Distribuição Pública",
+        "especie": "Minuta de Prospecto Preliminar"
+    },
+    {
+        "id": "IPE_78_95_46",
+        "categoria": "Documentos de Oferta de Distribuição Pública",
+        "tipo": "Prospecto de Distribuição Pública",
+        "especie": "Prospecto Definitivo"
+    },
+    {
+        "id": "IPE_78_95_45",
+        "categoria": "Documentos de Oferta de Distribuição Pública",
+        "tipo": "Prospecto de Distribuição Pública",
+        "especie": "Prospecto Preliminar"
+    },
+    {
+        "id": "IPE_78_95_47",
+        "categoria": "Documentos de Oferta de Distribuição Pública",
+        "tipo": "Prospecto de Distribuição Pública",
+        "especie": "Suplemento de Prospecto"
+    },
+    {
+        "id": "IPE_104_-1_-1",
+        "categoria": "Documentos para análise da oferta pela B3",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_104_120_-1",
+        "categoria": "Documentos para análise da oferta pela B3",
+        "tipo": "Comprovante de pagamento de taxa (B3)",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_104_131_-1",
+        "categoria": "Documentos para análise da oferta pela B3",
+        "tipo": "Comunicados e Declarações (B3)",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_104_132_-1",
+        "categoria": "Documentos para análise da oferta pela B3",
+        "tipo": "Contratos de distribuição, estabilização e outros (B3)",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_104_130_-1",
+        "categoria": "Documentos para análise da oferta pela B3",
+        "tipo": "Documento com marcas de revisão (B3)",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_104_123_-1",
+        "categoria": "Documentos para análise da oferta pela B3",
+        "tipo": "Requerimento à B3",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_102_-1_-1",
+        "categoria": "Documentos para listagem de companhia na B3",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_102_-1_38",
+        "categoria": "Documentos para listagem de companhia na B3",
+        "tipo": "TODOS",
+        "especie": "Outros"
+    },
+    {
+        "id": "IPE_102_120_-1",
+        "categoria": "Documentos para listagem de companhia na B3",
+        "tipo": "Comprovante de pagamento de taxa (B3)",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_102_130_-1",
+        "categoria": "Documentos para listagem de companhia na B3",
+        "tipo": "Documento com marcas de revisão (B3)",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_102_130_38",
+        "categoria": "Documentos para listagem de companhia na B3",
+        "tipo": "Documento com marcas de revisão (B3)",
+        "especie": "Outros"
+    },
+    {
+        "id": "IPE_102_121_-1",
+        "categoria": "Documentos para listagem de companhia na B3",
+        "tipo": "Outros documentos (B3)",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_102_123_-1",
+        "categoria": "Documentos para listagem de companhia na B3",
+        "tipo": "Requerimento à B3",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_85_-1_-1",
+        "categoria": "Documentos para registro de companhia",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_85_108_-1",
+        "categoria": "Documentos para registro de companhia",
+        "tipo": "Comprovante de pagamento de taxa",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_85_109_-1",
+        "categoria": "Documentos para registro de companhia",
+        "tipo": "Documento com marcas de revisão",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_85_49_-1",
+        "categoria": "Documentos para registro de companhia",
+        "tipo": "Outros documentos",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_85_107_-1",
+        "categoria": "Documentos para registro de companhia",
+        "tipo": "Requerimento à CVM e/ou à BM&FBOVESPA",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_103_-1_-1",
+        "categoria": "Documentos para registro de companhia na CVM",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_103_-1_60",
+        "categoria": "Documentos para registro de companhia na CVM",
+        "tipo": "TODOS",
+        "especie": "Termo de Posse de Membro da Diretoria"
+    },
+    {
+        "id": "IPE_103_127_-1",
+        "categoria": "Documentos para registro de companhia na CVM",
+        "tipo": "Documento com marcas de revisão - DFP",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_103_129_-1",
+        "categoria": "Documentos para registro de companhia na CVM",
+        "tipo": "Documento com marcas de revisão - Estatuto Social",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_103_126_-1",
+        "categoria": "Documentos para registro de companhia na CVM",
+        "tipo": "Documento com marcas de revisão - Formulário Cadastral",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_103_125_-1",
+        "categoria": "Documentos para registro de companhia na CVM",
+        "tipo": "Documento com marcas de revisão - Formulário de Referência",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_103_128_-1",
+        "categoria": "Documentos para registro de companhia na CVM",
+        "tipo": "Documento com marcas de revisão - ITR",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_103_122_-1",
+        "categoria": "Documentos para registro de companhia na CVM",
+        "tipo": "Outros documentos (CVM)",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_103_124_-1",
+        "categoria": "Documentos para registro de companhia na CVM",
+        "tipo": "Requerimento à CVM",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_103_135_-1",
+        "categoria": "Documentos para registro de companhia na CVM",
+        "tipo": "Termo de Posse",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_103_135_60",
+        "categoria": "Documentos para registro de companhia na CVM",
+        "tipo": "Termo de Posse",
+        "especie": "Termo de Posse de Membro da Diretoria"
+    },
+    {
+        "id": "IPE_86_-1_-1",
+        "categoria": "Documentos para registro de oferta",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_86_108_-1",
+        "categoria": "Documentos para registro de oferta",
+        "tipo": "Comprovante de pagamento de taxa",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_86_110_-1",
+        "categoria": "Documentos para registro de oferta",
+        "tipo": "Comunicados e Declarações",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_86_111_-1",
+        "categoria": "Documentos para registro de oferta",
+        "tipo": "Contratos de distribuição, estabilização e outros",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_86_109_-1",
+        "categoria": "Documentos para registro de oferta",
+        "tipo": "Documento com marcas de revisão",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_86_49_-1",
+        "categoria": "Documentos para registro de oferta",
+        "tipo": "Outros documentos",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_86_107_-1",
+        "categoria": "Documentos para registro de oferta",
+        "tipo": "Requerimento à CVM e/ou à BM&FBOVESPA",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_109_-1_-1",
+        "categoria": "Emissor Estrangeiro  (entidade de investimentos)",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_109_138_-1",
+        "categoria": "Emissor Estrangeiro  (entidade de investimentos)",
+        "tipo": "Composição de carteira",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_109_139_-1",
+        "categoria": "Emissor Estrangeiro  (entidade de investimentos)",
+        "tipo": "Demais informações específicas obrigatórias",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_54_-1_-1",
+        "categoria": "Escrituras e aditamentos de debêntures",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_70_-1_-1",
+        "categoria": "Estatuto Social",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_4_-1_-1",
+        "categoria": "Fato Relevante",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_66_-1_-1",
+        "categoria": "Formulário Cadastral - Em arquivo",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_112_-1_-1",
+        "categoria": "Formulário de Informações Semestrais - ISEM",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_67_-1_-1",
+        "categoria": "Formulário de Referência - Em arquivo",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_67_61_-1",
+        "categoria": "Formulário de Referência - Em arquivo",
+        "tipo": "Atualizações previstas no art. 24 da IN480/09",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_67_60_-1",
+        "categoria": "Formulário de Referência - Em arquivo",
+        "tipo": "Formulário Completo",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_113_-1_-1",
+        "categoria": "Formulário FÁCIL",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_5_-1_-1",
+        "categoria": "Informação Prestada às Bolsas Estrangeiras",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_46_-1_-1",
+        "categoria": "Informações Companhias em Falência",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_46_68_-1",
+        "categoria": "Informações Companhias em Falência",
+        "tipo": "Causas e circunstâncias da falência",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_46_71_-1",
+        "categoria": "Informações Companhias em Falência",
+        "tipo": "Contas apresentadas ao final do processo de falência",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_46_69_-1",
+        "categoria": "Informações Companhias em Falência",
+        "tipo": "Contas demonstrativas da administração",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_46_70_-1",
+        "categoria": "Informações Companhias em Falência",
+        "tipo": "Outras informações contábeis",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_46_72_-1",
+        "categoria": "Informações Companhias em Falência",
+        "tipo": "Relatório final",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_46_73_-1",
+        "categoria": "Informações Companhias em Falência",
+        "tipo": "Sentença de encerramento",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_47_-1_-1",
+        "categoria": "Informações Companhias em Liquidação",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_47_81_-1",
+        "categoria": "Informações Companhias em Liquidação",
+        "tipo": "Ato de encerramento da liquidação",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_47_75_-1",
+        "categoria": "Informações Companhias em Liquidação",
+        "tipo": "Destituição de Liquidante",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_47_74_-1",
+        "categoria": "Informações Companhias em Liquidação",
+        "tipo": "Nomeação de Liquidante",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_47_80_-1",
+        "categoria": "Informações Companhias em Liquidação",
+        "tipo": "Outros relatórios, pareceres ou informações contábeis",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_47_77_-1",
+        "categoria": "Informações Companhias em Liquidação",
+        "tipo": "Quadro geral de credores",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_47_78_-1",
+        "categoria": "Informações Companhias em Liquidação",
+        "tipo": "Quadro geral de credores definitivo",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_47_79_-1",
+        "categoria": "Informações Companhias em Liquidação",
+        "tipo": "Relatório e balanço final da liquidação",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_47_76_-1",
+        "categoria": "Informações Companhias em Liquidação",
+        "tipo": "Substituição de Liquidante",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_58_-1_-1",
+        "categoria": "Informações de Companhias em Recuperação Judicial ou Extrajudicial",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_58_-1_4",
+        "categoria": "Informações de Companhias em Recuperação Judicial ou Extrajudicial",
+        "tipo": "TODOS",
+        "especie": "Ata"
+    },
+    {
+        "id": "IPE_58_-1_28",
+        "categoria": "Informações de Companhias em Recuperação Judicial ou Extrajudicial",
+        "tipo": "TODOS",
+        "especie": "Edital de Convocação"
+    },
+    {
+        "id": "IPE_58_-1_32",
+        "categoria": "Informações de Companhias em Recuperação Judicial ou Extrajudicial",
+        "tipo": "TODOS",
+        "especie": "Proposta para a assembleia"
+    },
+    {
+        "id": "IPE_58_-1_3",
+        "categoria": "Informações de Companhias em Recuperação Judicial ou Extrajudicial",
+        "tipo": "TODOS",
+        "especie": "Sumário das Decisões"
+    },
+    {
+        "id": "IPE_58_54_-1",
+        "categoria": "Informações de Companhias em Recuperação Judicial ou Extrajudicial",
+        "tipo": "Assembleia de Credores",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_58_54_4",
+        "categoria": "Informações de Companhias em Recuperação Judicial ou Extrajudicial",
+        "tipo": "Assembleia de Credores",
+        "especie": "Ata"
+    },
+    {
+        "id": "IPE_58_54_28",
+        "categoria": "Informações de Companhias em Recuperação Judicial ou Extrajudicial",
+        "tipo": "Assembleia de Credores",
+        "especie": "Edital de Convocação"
+    },
+    {
+        "id": "IPE_58_54_32",
+        "categoria": "Informações de Companhias em Recuperação Judicial ou Extrajudicial",
+        "tipo": "Assembleia de Credores",
+        "especie": "Proposta para a assembleia"
+    },
+    {
+        "id": "IPE_58_54_3",
+        "categoria": "Informações de Companhias em Recuperação Judicial ou Extrajudicial",
+        "tipo": "Assembleia de Credores",
+        "especie": "Sumário das Decisões"
+    },
+    {
+        "id": "IPE_58_66_-1",
+        "categoria": "Informações de Companhias em Recuperação Judicial ou Extrajudicial",
+        "tipo": "Contas demonstrativas mensais",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_58_49_-1",
+        "categoria": "Informações de Companhias em Recuperação Judicial ou Extrajudicial",
+        "tipo": "Outros documentos",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_58_64_-1",
+        "categoria": "Informações de Companhias em Recuperação Judicial ou Extrajudicial",
+        "tipo": "Pedido de homologação de Plano de Recuperação Extrajudicial",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_58_47_-1",
+        "categoria": "Informações de Companhias em Recuperação Judicial ou Extrajudicial",
+        "tipo": "Petição Inicial",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_58_48_-1",
+        "categoria": "Informações de Companhias em Recuperação Judicial ou Extrajudicial",
+        "tipo": "Plano de Recuperação",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_58_67_-1",
+        "categoria": "Informações de Companhias em Recuperação Judicial ou Extrajudicial",
+        "tipo": "Relatório circunstanciado",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_58_65_-1",
+        "categoria": "Informações de Companhias em Recuperação Judicial ou Extrajudicial",
+        "tipo": "Relatório de cumprimento do plano",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_58_50_-1",
+        "categoria": "Informações de Companhias em Recuperação Judicial ou Extrajudicial",
+        "tipo": "Sentenças",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_68_-1_-1",
+        "categoria": "Informações sobre acordos de acionistas",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_75_-1_-1",
+        "categoria": "Informações sobre o Programa de Distribuição Contínua (Anexo X da IN CVM n° 400/03)",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_100_-1_-1",
+        "categoria": "Informe Mensal de CRA",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_22_-1_-1",
+        "categoria": "OPA - Edital de Oferta Pública de Ações",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_63_-1_-1",
+        "categoria": "Parecer Jurídico - BDRs Níveis II e III (Art.5º, inciso III, alínea d, Instr. CVM 331/00)",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_71_-1_-1",
+        "categoria": "Pedidos de falência",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_53_-1_-1",
+        "categoria": "Plano de Remuneração Baseado em Ações",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_79_-1_-1",
+        "categoria": "Plano de Remuneração Baseado em Ações (exceto Plano de Opções)",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_64_-1_-1",
+        "categoria": "Plano de Remuneração ou Retenção de Administradores e Executivos",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_94_-1_-1",
+        "categoria": "Política de Destinação de Resultados",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_83_-1_-1",
+        "categoria": "Política de Dividendos",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_11_-1_-1",
+        "categoria": "Política de Divulgação de Ato ou Fato Relevante",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_82_-1_-1",
+        "categoria": "Política de Gerenciamento de Riscos",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_87_-1_-1",
+        "categoria": "Política de indicação",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_12_-1_-1",
+        "categoria": "Política de Negociação das Ações da Companhia",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_95_-1_-1",
+        "categoria": "Política de Negociação de Valores Mobiliários",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_92_-1_-1",
+        "categoria": "Política de Remuneração",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_105_-1_-1",
+        "categoria": "Política de Sustentabilidade",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_81_-1_-1",
+        "categoria": "Política de Transações entre Partes Relacionadas",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_93_-1_-1",
+        "categoria": "Política para Contratação de Serviços Extra-Auditoria de seus Auditores Independentes",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_96_-1_-1",
+        "categoria": "Política sobre Contribuições e Doações",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_21_-1_-1",
+        "categoria": "Prospecto de Distribuição Pública",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_97_-1_-1",
+        "categoria": "Regimento Interno da Diretoria",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_90_-1_-1",
+        "categoria": "Regimento interno de Comitês",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_76_-1_-1",
+        "categoria": "Regimento Interno do Comitê de Auditoria Estatutário",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_88_-1_-1",
+        "categoria": "Regimento interno do Conselho de Administração",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_89_-1_-1",
+        "categoria": "Regimento interno do Conselho Fiscal",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_99_-1_-1",
+        "categoria": "Regulamentos da B3",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_99_-1_58",
+        "categoria": "Regulamentos da B3",
+        "tipo": "TODOS",
+        "especie": "Defesa - Notificação B3"
+    },
+    {
+        "id": "IPE_99_-1_59",
+        "categoria": "Regulamentos da B3",
+        "tipo": "TODOS",
+        "especie": "Recurso"
+    },
+    {
+        "id": "IPE_99_117_-1",
+        "categoria": "Regulamentos da B3",
+        "tipo": "Processo de enforcement",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_99_117_58",
+        "categoria": "Regulamentos da B3",
+        "tipo": "Processo de enforcement",
+        "especie": "Defesa - Notificação B3"
+    },
+    {
+        "id": "IPE_99_117_59",
+        "categoria": "Regulamentos da B3",
+        "tipo": "Processo de enforcement",
+        "especie": "Recurso"
+    },
+    {
+        "id": "IPE_114_-1_-1",
+        "categoria": "Relação de Dispensa de Obrigações Regulatórias",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_108_-1_-1",
+        "categoria": "Relato Integrado",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_110_-1_-1",
+        "categoria": "Relatório de Informações Financeiras Relacionadas à Sustentabilidade - Padrão ISSB",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_77_-1_-1",
+        "categoria": "Relatório de Sustentabilidade",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_107_-1_-1",
+        "categoria": "Relatório Proventos",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_2_-1_-1",
+        "categoria": "Reunião da Administração",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_2_-1_4",
+        "categoria": "Reunião da Administração",
+        "tipo": "TODOS",
+        "especie": "Ata"
+    },
+    {
+        "id": "IPE_2_-1_3",
+        "categoria": "Reunião da Administração",
+        "tipo": "TODOS",
+        "especie": "Sumário das Decisões"
+    },
+    {
+        "id": "IPE_2_82_-1",
+        "categoria": "Reunião da Administração",
+        "tipo": "Comitê de Auditoria",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_2_82_4",
+        "categoria": "Reunião da Administração",
+        "tipo": "Comitê de Auditoria",
+        "especie": "Ata"
+    },
+    {
+        "id": "IPE_2_32_-1",
+        "categoria": "Reunião da Administração",
+        "tipo": "Conselho Consultivo",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_2_32_4",
+        "categoria": "Reunião da Administração",
+        "tipo": "Conselho Consultivo",
+        "especie": "Ata"
+    },
+    {
+        "id": "IPE_2_32_3",
+        "categoria": "Reunião da Administração",
+        "tipo": "Conselho Consultivo",
+        "especie": "Sumário das Decisões"
+    },
+    {
+        "id": "IPE_2_31_-1",
+        "categoria": "Reunião da Administração",
+        "tipo": "Conselho de Administração",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_2_31_4",
+        "categoria": "Reunião da Administração",
+        "tipo": "Conselho de Administração",
+        "especie": "Ata"
+    },
+    {
+        "id": "IPE_2_31_3",
+        "categoria": "Reunião da Administração",
+        "tipo": "Conselho de Administração",
+        "especie": "Sumário das Decisões"
+    },
+    {
+        "id": "IPE_2_33_-1",
+        "categoria": "Reunião da Administração",
+        "tipo": "Conselho Fiscal",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_2_33_4",
+        "categoria": "Reunião da Administração",
+        "tipo": "Conselho Fiscal",
+        "especie": "Ata"
+    },
+    {
+        "id": "IPE_2_33_3",
+        "categoria": "Reunião da Administração",
+        "tipo": "Conselho Fiscal",
+        "especie": "Sumário das Decisões"
+    },
+    {
+        "id": "IPE_2_34_-1",
+        "categoria": "Reunião da Administração",
+        "tipo": "Diretoria",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_2_34_4",
+        "categoria": "Reunião da Administração",
+        "tipo": "Diretoria",
+        "especie": "Ata"
+    },
+    {
+        "id": "IPE_2_34_3",
+        "categoria": "Reunião da Administração",
+        "tipo": "Diretoria",
+        "especie": "Sumário das Decisões"
+    },
+    {
+        "id": "IPE_57_-1_-1",
+        "categoria": "Sentença de Falência",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_116_-1_-1",
+        "categoria": "Termo de Emissão de Nota Comercial",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_72_-1_-1",
+        "categoria": "Termo de Securitização e Aditamentos de Direitos Creditórios",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_8_-1_-1",
+        "categoria": "Valores Mobiliários Negociados e Detidos",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_8_38_-1",
+        "categoria": "Valores Mobiliários Negociados e Detidos",
+        "tipo": "Empresas Nível 1, 2 ou Novo Mercado - Posição Individual",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_8_7_-1",
+        "categoria": "Valores Mobiliários Negociados e Detidos",
+        "tipo": "Posição Consolidada",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_8_6_-1",
+        "categoria": "Valores Mobiliários Negociados e Detidos",
+        "tipo": "Posição Individual",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_8_99_-1",
+        "categoria": "Valores Mobiliários Negociados e Detidos",
+        "tipo": "Posição Individual - Cia, Controladas e Coligadas",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_8_44_-1",
+        "categoria": "Valores Mobiliários Negociados e Detidos",
+        "tipo": "Posse de Administrador (Valores Mobiliários Detidos na Posse)",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_98_-1",
+        "categoria": "Tipo: AGCRA",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_97_-1",
+        "categoria": "Tipo: AGCRI",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_5_-1",
+        "categoria": "Tipo: AGDEB",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_1_-1",
+        "categoria": "Tipo: AGE",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_4_-1",
+        "categoria": "Tipo: AGESP",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_2_-1",
+        "categoria": "Tipo: AGO",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_3_-1",
+        "categoria": "Tipo: AGO/E",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_103_-1",
+        "categoria": "Tipo: Adoção do processo de voto múltiplo",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_104_-1",
+        "categoria": "Tipo: Adoção do voto a distância",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_96_-1",
+        "categoria": "Tipo: Aumento de capital por subscrição privada deliberado em RCA",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_83_-1",
+        "categoria": "Tipo: Comunicado art.133 da Lei nº6.404/76",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_105_-1",
+        "categoria": "Tipo: Data prevista para a assembleia",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_84_-1",
+        "categoria": "Tipo: Outros avisos",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_106_-1",
+        "categoria": "Tipo: Solicitação de acionista para o Boletim de Voto",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_113_-1",
+        "categoria": "Tipo: Carta Anual de Governança Corporativa (art. 8º, VIII da Lei 13.303/16",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_114_-1",
+        "categoria": "Tipo: Carta Anual de Políticas Públicas (art. 8º, I da Lei 13.303/16)",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_115_-1",
+        "categoria": "Tipo: Carta consolidada de políticas públicas e governança corporativa (Decreto Federal 8.945/16)",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_87_-1",
+        "categoria": "Tipo: Apresentações a analistas/agentes do mercado",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_51_-1",
+        "categoria": "Tipo: Aquisição/Alienação de Participação Acionária Relevante",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_52_-1",
+        "categoria": "Tipo: Esclarecimentos Sobre Consultas CVM/BOVESPA",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_134_-1",
+        "categoria": "Tipo: Esclarecimentos sobre questionamentos da B3",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_112_-1",
+        "categoria": "Tipo: Esclarecimentos sobre questionamentos da CVM/B3",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_102_-1",
+        "categoria": "Tipo: Instalação, mudança ou dissolução do Comitê de Auditoria Estatutário",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_55_-1",
+        "categoria": "Tipo: Mudança de Auditor",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_53_-1",
+        "categoria": "Tipo: Outros Comunicados Não Considerados Fatos Relevantes",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_118_-1",
+        "categoria": "Tipo: Contratos de indenidade e aditivos",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_119_-1",
+        "categoria": "Tipo: Outros documentos relacionados a contratos de indenidade",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_56_-1",
+        "categoria": "Tipo: Balanço Social",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_57_-1",
+        "categoria": "Tipo: Demonstração do Valor Adicionado",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_88_-1",
+        "categoria": "Tipo: Demonstrações Financeiras Adicionais",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_37_-1",
+        "categoria": "Tipo: Demonstrações Financeiras Anuais Completas",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_42_-1",
+        "categoria": "Tipo: Demonstrações Financeiras em Padrões Internacionais",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_45_-1",
+        "categoria": "Tipo: Demonstrações Financeiras Especiais - Registro Inicial de Cia Aberta",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_46_-1",
+        "categoria": "Tipo: Demonstrações Financeiras Intermediárias",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_20_-1",
+        "categoria": "Tipo: Laudo de Avaliação",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_63_-1",
+        "categoria": "Tipo: Notificação do agente fiduciário aos debenturistas",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_85_-1",
+        "categoria": "Tipo: Plano de Investimento",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_29_-1",
+        "categoria": "Tipo: Press-release",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_58_-1",
+        "categoria": "Tipo: Relatório Anual",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_86_-1",
+        "categoria": "Tipo: Relatório de Agência de Rating",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_30_-1",
+        "categoria": "Tipo: Relatório de Agente Fiduciário",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_43_-1",
+        "categoria": "Tipo: Relatório de Análise Gerencial",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_89_-1",
+        "categoria": "Tipo: Anúncio de Encerramento de Distribuição Pública",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_90_-1",
+        "categoria": "Tipo: Anúncio de Início de Distribuição Pública",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_91_-1",
+        "categoria": "Tipo: Aviso ao Mercado",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_92_-1",
+        "categoria": "Tipo: Comunicação de Modificação de Oferta",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_101_-1",
+        "categoria": "Tipo: Comunicado de encerramento de oferta com esforços restritos",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_100_-1",
+        "categoria": "Tipo: Comunicado de início de oferta com esforços restritos",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_93_-1",
+        "categoria": "Tipo: Edital de Leilão de Ações",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_94_-1",
+        "categoria": "Tipo: Informações sobre o Programa de Distribuição Contínua",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_140_-1",
+        "categoria": "Tipo: Início e Encerramento de Oferta Direta realizada no FÁCIL",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_136_-1",
+        "categoria": "Tipo: Lâmina de Oferta de Ações/Units",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_137_-1",
+        "categoria": "Tipo: Lâmina de Oferta de Dívida",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_95_-1",
+        "categoria": "Tipo: Prospecto de Distribuição Pública",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_120_-1",
+        "categoria": "Tipo: Comprovante de pagamento de taxa (B3)",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_131_-1",
+        "categoria": "Tipo: Comunicados e Declarações (B3)",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_132_-1",
+        "categoria": "Tipo: Contratos de distribuição, estabilização e outros (B3)",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_130_-1",
+        "categoria": "Tipo: Documento com marcas de revisão (B3)",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_123_-1",
+        "categoria": "Tipo: Requerimento à B3",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_121_-1",
+        "categoria": "Tipo: Outros documentos (B3)",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_108_-1",
+        "categoria": "Tipo: Comprovante de pagamento de taxa",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_109_-1",
+        "categoria": "Tipo: Documento com marcas de revisão",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_49_-1",
+        "categoria": "Tipo: Outros documentos",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_107_-1",
+        "categoria": "Tipo: Requerimento à CVM e/ou à BM&FBOVESPA",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_127_-1",
+        "categoria": "Tipo: Documento com marcas de revisão - DFP",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_129_-1",
+        "categoria": "Tipo: Documento com marcas de revisão - Estatuto Social",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_126_-1",
+        "categoria": "Tipo: Documento com marcas de revisão - Formulário Cadastral",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_125_-1",
+        "categoria": "Tipo: Documento com marcas de revisão - Formulário de Referência",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_128_-1",
+        "categoria": "Tipo: Documento com marcas de revisão - ITR",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_122_-1",
+        "categoria": "Tipo: Outros documentos (CVM)",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_124_-1",
+        "categoria": "Tipo: Requerimento à CVM",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_135_-1",
+        "categoria": "Tipo: Termo de Posse",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_110_-1",
+        "categoria": "Tipo: Comunicados e Declarações",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_111_-1",
+        "categoria": "Tipo: Contratos de distribuição, estabilização e outros",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_138_-1",
+        "categoria": "Tipo: Composição de carteira",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_139_-1",
+        "categoria": "Tipo: Demais informações específicas obrigatórias",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_61_-1",
+        "categoria": "Tipo: Atualizações previstas no art. 24 da IN480/09",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_60_-1",
+        "categoria": "Tipo: Formulário Completo",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_68_-1",
+        "categoria": "Tipo: Causas e circunstâncias da falência",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_71_-1",
+        "categoria": "Tipo: Contas apresentadas ao final do processo de falência",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_69_-1",
+        "categoria": "Tipo: Contas demonstrativas da administração",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_70_-1",
+        "categoria": "Tipo: Outras informações contábeis",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_72_-1",
+        "categoria": "Tipo: Relatório final",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_73_-1",
+        "categoria": "Tipo: Sentença de encerramento",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_81_-1",
+        "categoria": "Tipo: Ato de encerramento da liquidação",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_75_-1",
+        "categoria": "Tipo: Destituição de Liquidante",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_74_-1",
+        "categoria": "Tipo: Nomeação de Liquidante",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_80_-1",
+        "categoria": "Tipo: Outros relatórios, pareceres ou informações contábeis",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_77_-1",
+        "categoria": "Tipo: Quadro geral de credores",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_78_-1",
+        "categoria": "Tipo: Quadro geral de credores definitivo",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_79_-1",
+        "categoria": "Tipo: Relatório e balanço final da liquidação",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_76_-1",
+        "categoria": "Tipo: Substituição de Liquidante",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_54_-1",
+        "categoria": "Tipo: Assembleia de Credores",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_66_-1",
+        "categoria": "Tipo: Contas demonstrativas mensais",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_64_-1",
+        "categoria": "Tipo: Pedido de homologação de Plano de Recuperação Extrajudicial",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_47_-1",
+        "categoria": "Tipo: Petição Inicial",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_48_-1",
+        "categoria": "Tipo: Plano de Recuperação",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_67_-1",
+        "categoria": "Tipo: Relatório circunstanciado",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_65_-1",
+        "categoria": "Tipo: Relatório de cumprimento do plano",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_50_-1",
+        "categoria": "Tipo: Sentenças",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_117_-1",
+        "categoria": "Tipo: Processo de enforcement",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_82_-1",
+        "categoria": "Tipo: Comitê de Auditoria",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_32_-1",
+        "categoria": "Tipo: Conselho Consultivo",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_31_-1",
+        "categoria": "Tipo: Conselho de Administração",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_33_-1",
+        "categoria": "Tipo: Conselho Fiscal",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_34_-1",
+        "categoria": "Tipo: Diretoria",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_38_-1",
+        "categoria": "Tipo: Empresas Nível 1, 2 ou Novo Mercado - Posição Individual",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_7_-1",
+        "categoria": "Tipo: Posição Consolidada",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_6_-1",
+        "categoria": "Tipo: Posição Individual",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_99_-1",
+        "categoria": "Tipo: Posição Individual - Cia, Controladas e Coligadas",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_44_-1",
+        "categoria": "Tipo: Posse de Administrador (Valores Mobiliários Detidos na Posse)",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_4",
+        "categoria": "Espécie: Ata",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_28",
+        "categoria": "Espécie: Edital de Convocação",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_32",
+        "categoria": "Espécie: Proposta para a assembleia",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_3",
+        "categoria": "Espécie: Sumário das Decisões",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_61",
+        "categoria": "Espécie: Instrução de voto",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_44",
+        "categoria": "Espécie: Manual para participação",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_2",
+        "categoria": "Espécie: Proposta da Administração",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_54",
+        "categoria": "Espécie: Boletim de voto a distância",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_6",
+        "categoria": "Espécie: Justificação de Incorporação, Cisão ou Fusão",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_53",
+        "categoria": "Espécie: Mapa final de votação",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_56",
+        "categoria": "Espécie: Mapa Final de Votação Detalhado",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_72",
+        "categoria": "Espécie: Mapa Final de Votação Resumido",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_57",
+        "categoria": "Espécie: Mapa Final de Votação Sintético",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_52",
+        "categoria": "Espécie: Mapa Sintético Consolidado",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_51",
+        "categoria": "Espécie: Mapa Sintético do Depositário Central",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_50",
+        "categoria": "Espécie: Mapa Sintético do Escriturador",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_73",
+        "categoria": "Espécie: Mapa Sintético dos votos enviados diretamente à Companhia",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_41",
+        "categoria": "Espécie: Material referente a pedidos públicos de procuração",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_5",
+        "categoria": "Espécie: Protocolo de Incorporação, Cisão ou Fusão",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_55",
+        "categoria": "Espécie: Protocolo e Justificação de Incorporação, Fusão ou Cisão",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_30",
+        "categoria": "Espécie: Declaração de Alienação de Participação Acionária Relevante",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_29",
+        "categoria": "Espécie: Declaração de Aquisição de Participação Acionária Relevante",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_63",
+        "categoria": "Espécie: Balanço Social",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_69",
+        "categoria": "Espécie: Carve-out",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_67",
+        "categoria": "Espécie: Combinadas",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_68",
+        "categoria": "Espécie: Condensadas",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_71",
+        "categoria": "Espécie: Demonstrações Financeiras em Padrões Internacionais",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_64",
+        "categoria": "Espécie: Especialmente preparadas para Registro Inicial",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_65",
+        "categoria": "Espécie: Pró-forma",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_70",
+        "categoria": "Espécie: Regulatórias",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_66",
+        "categoria": "Espécie: Separadas",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_36",
+        "categoria": "Espécie: Demonstrações Financeiras com reconciliação para IFRS",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_35",
+        "categoria": "Espécie: Demonstrações Financeiras com reconciliação para US GAAP",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_34",
+        "categoria": "Espécie: Demonstrações Financeiras em IFRS",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_33",
+        "categoria": "Espécie: Demonstrações Financeiras em US GAAP",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_42",
+        "categoria": "Espécie: DFs Mercosul com reconciliação para IFRS",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_38",
+        "categoria": "Espécie: Outros",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_49",
+        "categoria": "Espécie: Minuta de Prospecto Definitivo",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_48",
+        "categoria": "Espécie: Minuta de Prospecto Preliminar",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_46",
+        "categoria": "Espécie: Prospecto Definitivo",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_45",
+        "categoria": "Espécie: Prospecto Preliminar",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_47",
+        "categoria": "Espécie: Suplemento de Prospecto",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_60",
+        "categoria": "Espécie: Termo de Posse de Membro da Diretoria",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_58",
+        "categoria": "Espécie: Defesa - Notificação B3",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "IPE_-1_-1_59",
+        "categoria": "Espécie: Recurso",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "103",
+        "categoria": "Adoção do processo de voto múltiplo",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "104",
+        "categoria": "Adoção do voto a distância",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "98",
+        "categoria": "AGCRA",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "97",
+        "categoria": "AGCRI",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "5",
+        "categoria": "AGDEB",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "1",
+        "categoria": "AGE",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "4",
+        "categoria": "AGESP",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "2",
+        "categoria": "AGO",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "3",
+        "categoria": "AGO/E",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "89",
+        "categoria": "Anúncio de Encerramento de Distribuição Pública",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "90",
+        "categoria": "Anúncio de Início de Distribuição Pública",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "87",
+        "categoria": "Apresentações a analistas/agentes do mercado",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "51",
+        "categoria": "Aquisição/Alienação de Participação Acionária Relevante",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "54",
+        "categoria": "Assembleia de Credores",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "81",
+        "categoria": "Ato de encerramento da liquidação",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "61",
+        "categoria": "Atualizações previstas no art. 24 da IN480/09",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "96",
+        "categoria": "Aumento de capital por subscrição privada deliberado em RCA",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "91",
+        "categoria": "Aviso ao Mercado",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "56",
+        "categoria": "Balanço Social",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "113",
+        "categoria": "Carta Anual de Governança Corporativa (art. 8º, VIII da Lei 13.303/16",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "114",
+        "categoria": "Carta Anual de Políticas Públicas (art. 8º, I da Lei 13.303/16)",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "115",
+        "categoria": "Carta consolidada de políticas públicas e governança corporativa (Decreto Federal 8.945/16)",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "68",
+        "categoria": "Causas e circunstâncias da falência",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "82",
+        "categoria": "Comitê de Auditoria",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "138",
+        "categoria": "Composição de carteira",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "108",
+        "categoria": "Comprovante de pagamento de taxa",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "120",
+        "categoria": "Comprovante de pagamento de taxa (B3)",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "92",
+        "categoria": "Comunicação de Modificação de Oferta",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "83",
+        "categoria": "Comunicado art.133 da Lei nº6.404/76",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "101",
+        "categoria": "Comunicado de encerramento de oferta com esforços restritos",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "100",
+        "categoria": "Comunicado de início de oferta com esforços restritos",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "110",
+        "categoria": "Comunicados e Declarações",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "131",
+        "categoria": "Comunicados e Declarações (B3)",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "32",
+        "categoria": "Conselho Consultivo",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "31",
+        "categoria": "Conselho de Administração",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "33",
+        "categoria": "Conselho Fiscal",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "71",
+        "categoria": "Contas apresentadas ao final do processo de falência",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "69",
+        "categoria": "Contas demonstrativas da administração",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "66",
+        "categoria": "Contas demonstrativas mensais",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "111",
+        "categoria": "Contratos de distribuição, estabilização e outros",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "132",
+        "categoria": "Contratos de distribuição, estabilização e outros (B3)",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "118",
+        "categoria": "Contratos de indenidade e aditivos",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "105",
+        "categoria": "Data prevista para a assembleia",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "139",
+        "categoria": "Demais informações específicas obrigatórias",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "57",
+        "categoria": "Demonstração do Valor Adicionado",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "88",
+        "categoria": "Demonstrações Financeiras Adicionais",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "37",
+        "categoria": "Demonstrações Financeiras Anuais Completas",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "42",
+        "categoria": "Demonstrações Financeiras em Padrões Internacionais",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "45",
+        "categoria": "Demonstrações Financeiras Especiais - Registro Inicial de Cia Aberta",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "46",
+        "categoria": "Demonstrações Financeiras Intermediárias",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "75",
+        "categoria": "Destituição de Liquidante",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "34",
+        "categoria": "Diretoria",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "109",
+        "categoria": "Documento com marcas de revisão",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "127",
+        "categoria": "Documento com marcas de revisão - DFP",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "129",
+        "categoria": "Documento com marcas de revisão - Estatuto Social",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "126",
+        "categoria": "Documento com marcas de revisão - Formulário Cadastral",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "125",
+        "categoria": "Documento com marcas de revisão - Formulário de Referência",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "128",
+        "categoria": "Documento com marcas de revisão - ITR",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "130",
+        "categoria": "Documento com marcas de revisão (B3)",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "93",
+        "categoria": "Edital de Leilão de Ações",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "38",
+        "categoria": "Empresas Nível 1, 2 ou Novo Mercado - Posição Individual",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "52",
+        "categoria": "Esclarecimentos Sobre Consultas CVM/BOVESPA",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "134",
+        "categoria": "Esclarecimentos sobre questionamentos da B3",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "112",
+        "categoria": "Esclarecimentos sobre questionamentos da CVM/B3",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "60",
+        "categoria": "Formulário Completo",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "94",
+        "categoria": "Informações sobre o Programa de Distribuição Contínua",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "140",
+        "categoria": "Início e Encerramento de Oferta Direta realizada no FÁCIL",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "102",
+        "categoria": "Instalação, mudança ou dissolução do Comitê de Auditoria Estatutário",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "136",
+        "categoria": "Lâmina de Oferta de Ações/Units",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "137",
+        "categoria": "Lâmina de Oferta de Dívida",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "20",
+        "categoria": "Laudo de Avaliação",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "55",
+        "categoria": "Mudança de Auditor",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "74",
+        "categoria": "Nomeação de Liquidante",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "63",
+        "categoria": "Notificação do agente fiduciário aos debenturistas",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "70",
+        "categoria": "Outras informações contábeis",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "84",
+        "categoria": "Outros avisos",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "53",
+        "categoria": "Outros Comunicados Não Considerados Fatos Relevantes",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "49",
+        "categoria": "Outros documentos",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "121",
+        "categoria": "Outros documentos (B3)",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "122",
+        "categoria": "Outros documentos (CVM)",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "119",
+        "categoria": "Outros documentos relacionados a contratos de indenidade",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "80",
+        "categoria": "Outros relatórios, pareceres ou informações contábeis",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "64",
+        "categoria": "Pedido de homologação de Plano de Recuperação Extrajudicial",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "47",
+        "categoria": "Petição Inicial",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "85",
+        "categoria": "Plano de Investimento",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "48",
+        "categoria": "Plano de Recuperação",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "7",
+        "categoria": "Posição Consolidada",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "6",
+        "categoria": "Posição Individual",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "99",
+        "categoria": "Posição Individual - Cia, Controladas e Coligadas",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "44",
+        "categoria": "Posse de Administrador (Valores Mobiliários Detidos na Posse)",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "29",
+        "categoria": "Press-release",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "117",
+        "categoria": "Processo de enforcement",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "95",
+        "categoria": "Prospecto de Distribuição Pública",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "77",
+        "categoria": "Quadro geral de credores",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "78",
+        "categoria": "Quadro geral de credores definitivo",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "58",
+        "categoria": "Relatório Anual",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "67",
+        "categoria": "Relatório circunstanciado",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "86",
+        "categoria": "Relatório de Agência de Rating",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "30",
+        "categoria": "Relatório de Agente Fiduciário",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "43",
+        "categoria": "Relatório de Análise Gerencial",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "65",
+        "categoria": "Relatório de cumprimento do plano",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "79",
+        "categoria": "Relatório e balanço final da liquidação",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "72",
+        "categoria": "Relatório final",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "123",
+        "categoria": "Requerimento à B3",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "124",
+        "categoria": "Requerimento à CVM",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "107",
+        "categoria": "Requerimento à CVM e/ou à BM&FBOVESPA",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "73",
+        "categoria": "Sentença de encerramento",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "50",
+        "categoria": "Sentenças",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "106",
+        "categoria": "Solicitação de acionista para o Boletim de Voto",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "76",
+        "categoria": "Substituição de Liquidante",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "135",
+        "categoria": "Termo de Posse",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "4",
+        "categoria": "Ata",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "63",
+        "categoria": "Balanço Social",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "54",
+        "categoria": "Boletim de voto a distância",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "69",
+        "categoria": "Carve-out",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "67",
+        "categoria": "Combinadas",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "68",
+        "categoria": "Condensadas",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "30",
+        "categoria": "Declaração de Alienação de Participação Acionária Relevante",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "29",
+        "categoria": "Declaração de Aquisição de Participação Acionária Relevante",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "58",
+        "categoria": "Defesa - Notificação B3",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "36",
+        "categoria": "Demonstrações Financeiras com reconciliação para IFRS",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "35",
+        "categoria": "Demonstrações Financeiras com reconciliação para US GAAP",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "34",
+        "categoria": "Demonstrações Financeiras em IFRS",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "71",
+        "categoria": "Demonstrações Financeiras em Padrões Internacionais",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "33",
+        "categoria": "Demonstrações Financeiras em US GAAP",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "42",
+        "categoria": "DFs Mercosul com reconciliação para IFRS",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "28",
+        "categoria": "Edital de Convocação",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "64",
+        "categoria": "Especialmente preparadas para Registro Inicial",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "61",
+        "categoria": "Instrução de voto",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "6",
+        "categoria": "Justificação de Incorporação, Cisão ou Fusão",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "44",
+        "categoria": "Manual para participação",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "53",
+        "categoria": "Mapa final de votação",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "56",
+        "categoria": "Mapa Final de Votação Detalhado",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "72",
+        "categoria": "Mapa Final de Votação Resumido",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "57",
+        "categoria": "Mapa Final de Votação Sintético",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "52",
+        "categoria": "Mapa Sintético Consolidado",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "51",
+        "categoria": "Mapa Sintético do Depositário Central",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "50",
+        "categoria": "Mapa Sintético do Escriturador",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "73",
+        "categoria": "Mapa Sintético dos votos enviados diretamente à Companhia",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "41",
+        "categoria": "Material referente a pedidos públicos de procuração",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "49",
+        "categoria": "Minuta de Prospecto Definitivo",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "48",
+        "categoria": "Minuta de Prospecto Preliminar",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "38",
+        "categoria": "Outros",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "65",
+        "categoria": "Pró-forma",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "2",
+        "categoria": "Proposta da Administração",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "32",
+        "categoria": "Proposta para a assembleia",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "46",
+        "categoria": "Prospecto Definitivo",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "45",
+        "categoria": "Prospecto Preliminar",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "5",
+        "categoria": "Protocolo de Incorporação, Cisão ou Fusão",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "55",
+        "categoria": "Protocolo e Justificação de Incorporação, Fusão ou Cisão",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "59",
+        "categoria": "Recurso",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "70",
+        "categoria": "Regulatórias",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "66",
+        "categoria": "Separadas",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "3",
+        "categoria": "Sumário das Decisões",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "47",
+        "categoria": "Suplemento de Prospecto",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    },
+    {
+        "id": "60",
+        "categoria": "Termo de Posse de Membro da Diretoria",
+        "tipo": "TODOS",
+        "especie": "TODOS"
+    }
+]
