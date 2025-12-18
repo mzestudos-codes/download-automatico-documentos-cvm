@@ -18,43 +18,33 @@ class CVMClient:
     def consultar(self, payload):
         url = "https://www.rad.cvm.gov.br/ENET/frmConsultaExternaCVM.aspx/ListarDocumentos"
         try:
-            response = self.session.post(url, json=payload, timeout=30)
+            response = self.session.post(url, json=payload, timeout=40)
             return response.json()
-        except Exception as e:
-            print(f"[ERRO INFRA] Falha na consulta: {e}")
+        except:
             return {}
 
-    def capturar_hash_e_cookies(self, seq):
-        """Acessa a página de gerência para obter o Hash dinâmico."""
+    def capturar_hash_dinamico(self, seq):
         url = f"https://www.rad.cvm.gov.br/ENET/frmGerenciaPaginaFRE.aspx?NumeroSequencialDocumento={seq}&CodigoTipoInstituicao=1"
         try:
             response = self.session.get(url, timeout=30)
-            # Busca o valor do Hash no HTML
             match = re.search(r"id=\"hdnHash\" value=\"(.*?)\"", response.text)
-            if match:
-                return match.group(1)
+            if match: return match.group(1)
             match_alt = re.search(r"Hash: '(.*?)'", response.text)
             return match_alt.group(1) if match_alt else ""
         except:
             return ""
 
     def baixar_via_relatorio(self, payload):
-        """Endpoint que retorna string Base64 do PDF."""
         url = "https://www.rad.cvm.gov.br/ENET/frmRelatorioPDF.aspx/GerarRelatorio"
         try:
             response = self.session.post(url, json=payload, timeout=300)
             response.raise_for_status()
-            
             res_json = response.json()
-            # A CVM retorna o Base64 dentro da chave 'd'
             base64_string = res_json.get('d', '')
-            
             if base64_string and isinstance(base64_string, str):
                 return base64.b64decode(base64_string)
-            
             return b""
-        except Exception as e:
-            print(f"      [!] Erro no GerarRelatorio: {e}")
+        except:
             return b""
 
     def baixar_arquivo_estatico(self, params):
@@ -68,14 +58,12 @@ class CVMClient:
 class FileManager:
     @staticmethod
     def criar_diretorio(caminho):
-        if not os.path.exists(caminho):
-            os.makedirs(caminho)
+        if not os.path.exists(caminho): os.makedirs(caminho)
 
     @staticmethod
     def salvar_arquivo(conteudo, nome, pasta):
-        if not conteudo:
-            return
+        if not conteudo: return
         caminho_final = os.path.join(pasta, nome)
         with open(caminho_final, 'wb') as f:
             f.write(conteudo)
-        print(f"      [OK] Arquivo salvo: {nome} ({len(conteudo)//1024} KB)")
+        print(f"      [OK] Salvo: {nome}")

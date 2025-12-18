@@ -1,10 +1,22 @@
 import re
 import os
 import time
+import unicodedata
 from datetime import datetime
 from infra import CVMClient, FileManager
 
 class DataParser:
+    @staticmethod
+    def limpar_nome(texto, limite=None):
+        if not texto: return ""
+        nfkd_form = unicodedata.normalize('NFKD', texto)
+        texto_sem_acentos = "".join([c for c in nfkd_form if not unicodedata.combining(c)])
+        texto_limpo = texto_sem_acentos.replace(" ", "_")
+        texto_limpo = re.sub(r'[^a-zA-Z0-9_]', '', texto_limpo)
+        texto_limpo = re.sub(r'_+', '_', texto_limpo).strip('_')
+        if limite: texto_limpo = texto_limpo[:limite]
+        return texto_limpo.upper()
+
     @staticmethod
     def processar_dados_brutos(raw_string, apenas_ativos=True):
         documentos_processados = []
@@ -13,13 +25,10 @@ class DataParser:
             if not registro or len(registro) < 50: continue
             campos = registro.split('$&')
             if len(campos) > 7:
-                status = campos[7].strip()
-                if apenas_ativos and status.lower() != "ativo": continue
-                
+                if apenas_ativos and campos[7].strip().lower() != "ativo": continue
                 cod_cvm = re.sub(r'\D', '', campos[0].strip()).zfill(6)
                 padrao_dl = r"OpenDownloadDocumentos\('(\d+)','(\d+)','([\w-]+)','(.*?)'\)"
                 match = re.search(padrao_dl, registro)
-                
                 if match:
                     documentos_processados.append({
                         "empresa": campos[1].strip(),
@@ -35,20 +44,26 @@ class DownloadManager:
         self.file_mgr = FileManager()
         self.parser = DataParser()
 
-    def iniciar_fluxo(self, data_de, data_ate, cod_categoria, callback_progresso=None):
+    def iniciar_fluxo(self, data_de, data_ate, cod_id, palavras_brutas="", callback_progresso=None):
         ts_pasta = datetime.now().strftime("%Y%m%d_%H%M%S")
         pasta_execucao = os.path.abspath(os.path.join("Downloads", f"Downloads_{ts_pasta}"))
         self.file_mgr.criar_diretorio(pasta_execucao)
 
-        payload_consulta = {
+        palavras_formatadas = ""
+        if palavras_brutas:
+            termos = [p.strip() for p in palavras_brutas.split(',') if p.strip()]
+            palavras_formatadas = "," + ",".join(termos)
+
+        payload = {
             "dataDe": data_de, "dataAte": data_ate, "empresa": "",
             "setorAtividade": "-1", "categoriaEmissor": "-1", "situacaoEmissor": "-1",
-            "tipoParticipante": "-1", "dataReferencia": "", "categoria": cod_categoria,
-            "periodo": "2", "horaIni": "", "horaFim": "", "palavraChave": "",
-            "ultimaDtRef": "false", "tipoEmpresa": "0", "token": "", "versaoCaptcha": ""
+            "tipoParticipante": "-1", "dataReferencia": "", "categoria": cod_id,
+            "periodo": "2", "horaIni": "", "horaFim": "", 
+            "palavraChave": palavras_formatadas, "ultimaDtRef": "false", 
+            "tipoEmpresa": "0", "token": "", "versaoCaptcha": ""
         }
 
-        res_json = self.client.consultar(payload_consulta)
+        res_json = self.client.consultar(payload)
         dados_brutos = res_json.get('d', {}).get('dados', "")
         lista_docs = self.parser.processar_dados_brutos(dados_brutos)
         
@@ -59,36 +74,32 @@ class DownloadManager:
 
         for i, doc in enumerate(lista_docs):
             item_atual = i + 1
-            cat = doc['categoria'].upper()
-            seq = doc["ids"][0]
+            cat_nome = doc['categoria']
+            seq_cvm = doc["ids"][0]
+            versao = doc["ids"][1]
             
-            print(f"[{item_atual}/{total}] Processando: {doc['empresa'][:30]}...")
-            
-            if any(x in cat for x in ["FRE", "ITR", "DFP", "FCA"]):
-                # Captura o Hash para este documento específico
-                hash_dinamico = self.client.capturar_hash_e_cookies(seq)
-                
-                tipo_doc = "FREWEB" if "FRE" in cat else "ITRWEB"
-                if "DFP" in cat: tipo_doc = "DFPWEB"
-                
+            if any(x in cat_nome.upper() for x in ["FRE", "ITR", "DFP", "FCA"]):
+                h = self.client.capturar_hash_dinamico(seq_cvm)
+                t_doc = "FREWEB"
+                if "ITR" in cat_nome.upper(): t_doc = "ITRWEB"
+                if "DFP" in cat_nome.upper(): t_doc = "DFPWEB"
                 payload_pdf = {
-                    "reportIds": report_ids, 
-                    "nrSequencialDocumento": seq,
-                    "codigoCVM": doc["cod_cvm"],
-                    "tipoDocumento": tipo_doc,
-                    "Hash": hash_dinamico,
-                    "token": "", "versaoCaptcha": ""
+                    "reportIds": report_ids, "nrSequencialDocumento": seq_cvm,
+                    "codigoCVM": doc["cod_cvm"], "tipoDocumento": t_doc,
+                    "Hash": h, "token": "", "versaoCaptcha": ""
                 }
                 conteudo_pdf = self.client.baixar_via_relatorio(payload_pdf)
-                time.sleep(1.5) # Pausa para o servidor respirar
+                time.sleep(1)
             else:
-                params = {"Tela": "ext", "numSequencia": seq, "numVersao": doc["ids"][1], "numProtocolo": doc["ids"][2], "descTipo": doc["ids"][3], "CodigoInstituicao": "1"}
+                params = {"Tela": "ext", "numSequencia": seq_cvm, "numVersao": versao, "numProtocolo": doc["ids"][2], "descTipo": doc["ids"][3], "CodigoInstituicao": "1"}
                 conteudo_pdf = self.client.baixar_arquivo_estatico(params)
 
             if conteudo_pdf:
-                # Sanitização do nome
-                empresa_nome = re.sub(r'[\\/*?:"<>|]', "_", doc['empresa'][:30])
-                nome_final = f"{empresa_nome}_{cat[:3]}_v{doc['ids'][1]}.pdf"
+                emp_f = self.parser.limpar_nome(doc['empresa'], 80)
+                cat_f = self.parser.limpar_nome(cat_nome, 40)
+                pc_f = self.parser.limpar_nome(palavras_brutas, 40)
+                pc_sep = f"_{pc_f}" if pc_f else ""
+                nome_final = f"{emp_f}_{cat_f}{pc_sep}_ID{seq_cvm}_v{versao}.pdf"
                 self.file_mgr.salvar_arquivo(conteudo_pdf, nome_final, pasta_execucao)
             
             if callback_progresso:
