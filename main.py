@@ -1,6 +1,7 @@
 import customtkinter as ctk
 from tkinter import messagebox
-import json, os, threading, platform
+import json, os, threading, platform, re
+from datetime import datetime
 from business import DownloadManager
 
 ctk.set_appearance_mode("light")
@@ -9,6 +10,7 @@ ctk.set_default_color_theme("green")
 COLOR_BG = "#F5F7F8"
 COLOR_WHITE = "#FFFFFF"
 COLOR_ACCENT = "#2D5A27"
+COLOR_ERROR = "#FF4B4B" # Vermelho para erro
 COLOR_TEXT = "#2C3333"
 
 class AppUI(ctk.CTk):
@@ -21,7 +23,7 @@ class AppUI(ctk.CTk):
         self.dict_sit_emissor = {"TODOS": "-1", "Em Falência": "4", "Em Liquidação Extrajudicial": "5", "Em liquidação judicial": "7", "Em Recuperação Extrajudicial": "9", "Em Recuperação Judicial ou Equivalente": "8", "Fase Operacional": "2", "Fase Pré-Operacional": "1", "Paralisada": "6"}
         self.dict_cat_emissor = {"TODOS": "-1", "Categoria A": "1", "Categoria B": "2", "Não Identificado": "99"}
 
-        self.title("CVM Pro - Coleta & Download")
+        self.title("CVM Pro - Validador Inteligente")
         self.geometry("640x950") 
         self.configure(fg_color=COLOR_BG)
         
@@ -32,15 +34,13 @@ class AppUI(ctk.CTk):
         self.scroll_frame = ctk.CTkScrollableFrame(self, fg_color="transparent")
         self.scroll_frame.pack(fill="both", expand=True, padx=10, pady=10)
 
+        # MODO
         self.mode_card = ctk.CTkFrame(self.scroll_frame, fg_color=COLOR_WHITE, corner_radius=15)
         self.mode_card.pack(padx=20, fill="x", pady=10)
-        
         ctk.CTkLabel(self.mode_card, text="MODO DE OPERAÇÃO", font=("Inter", 10, "bold"), text_color=COLOR_ACCENT).pack(pady=(10,0))
-        
         self.radio_var = ctk.StringVar(value="download")
         radio_frame = ctk.CTkFrame(self.mode_card, fg_color="transparent")
         radio_frame.pack(pady=10, fill="x")
-        
         ctk.CTkRadioButton(radio_frame, text="Download PDFs", variable=self.radio_var, value="download").pack(side="left", expand=True)
         ctk.CTkRadioButton(radio_frame, text="Planilha (.xlsx)", variable=self.radio_var, value="planilha").pack(side="left", expand=True)
         ctk.CTkRadioButton(radio_frame, text="Ambos", variable=self.radio_var, value="ambos").pack(side="left", expand=True)
@@ -48,11 +48,17 @@ class AppUI(ctk.CTk):
         self.card = ctk.CTkFrame(self.scroll_frame, fg_color=COLOR_WHITE, corner_radius=15)
         self.card.pack(padx=20, fill="both", expand=True, pady=5)
 
+        # --- DATAS COM VALIDADOR ---
         d_frame = ctk.CTkFrame(self.card, fg_color="transparent")
         d_frame.pack(fill="x", padx=25, pady=15)
         self.ent_de = self.create_date_input(d_frame, "Início", 0, "01/12/2025")
         self.ent_ate = self.create_date_input(d_frame, "Fim", 1, "18/12/2025")
+        
+        # Binds para validar enquanto digita
+        self.ent_de.bind('<KeyRelease>', lambda e: self.validar_datas_ui())
+        self.ent_ate.bind('<KeyRelease>', lambda e: self.validar_datas_ui())
 
+        # ... (Restante dos filtros iguais ao anterior)
         self.add_label("PALAVRAS-CHAVE (Separe por vírgula)")
         self.ent_palavra = ctk.CTkEntry(self.card, placeholder_text="Ex: aumento, capital", height=32)
         self.ent_palavra.pack(padx=25, fill="x", pady=2)
@@ -84,6 +90,38 @@ class AppUI(ctk.CTk):
         self.btn = ctk.CTkButton(self.card, text="EXECUTAR AÇÃO", fg_color=COLOR_ACCENT, height=50, corner_radius=10, font=("Inter", 13, "bold"), command=self.disparar_processo)
         self.btn.pack(padx=30, fill="x", pady=20)
 
+    # --- LÓGICA DE VALIDAÇÃO ---
+    def validar_datas_ui(self):
+        de_ok = self.checar_formato_data(self.ent_de)
+        ate_ok = self.checar_formato_data(self.ent_ate)
+        
+        if de_ok and ate_ok:
+            d1 = datetime.strptime(self.ent_de.get(), "%d/%m/%Y")
+            d2 = datetime.strptime(self.ent_ate.get(), "%d/%m/%Y")
+            if d1 > d2:
+                self.ent_de.configure(border_color=COLOR_ERROR)
+                self.ent_ate.configure(border_color=COLOR_ERROR)
+                return False
+            else:
+                self.ent_de.configure(border_color="#E5E5E5")
+                self.ent_ate.configure(border_color="#E5E5E5")
+                return True
+        return False
+
+    def checar_formato_data(self, entry):
+        texto = entry.get()
+        # Regex para DD/MM/AAAA
+        if re.match(r"^\d{2}/\d{2}/\d{4}$", texto):
+            try:
+                datetime.strptime(texto, "%d/%m/%Y")
+                entry.configure(border_color="#E5E5E5")
+                return True
+            except:
+                pass
+        entry.configure(border_color=COLOR_ERROR)
+        return False
+
+    # --- AUXILIARES E EVENTOS ---
     def add_label(self, text):
         ctk.CTkLabel(self.card, text=text, font=("Inter", 9, "bold"), text_color="#7F8487").pack(anchor="w", padx=30, pady=(10, 0))
 
@@ -104,7 +142,7 @@ class AppUI(ctk.CTk):
 
     def create_date_input(self, master, label, col, val):
         ctk.CTkLabel(master, text=label, font=("Inter", 9, "bold")).grid(row=0, column=col, sticky="w", padx=5)
-        ent = ctk.CTkEntry(master, height=35, justify="center")
+        ent = ctk.CTkEntry(master, height=35, justify="center", border_width=2)
         ent.grid(row=1, column=col, padx=5, sticky="ew")
         ent.insert(0, val)
         master.grid_columnconfigure(col, weight=1)
@@ -156,6 +194,9 @@ class AppUI(ctk.CTk):
         self.lbl_msg.configure(text=f"Processando {a} de {t}...", text_color=COLOR_ACCENT)
 
     def disparar_processo(self):
+        if not self.validar_datas_ui():
+            return messagebox.showerror("Erro de Data", "Verifique as datas inseridas.\nFormato: DD/MM/AAAA e Início deve ser antes do Fim.")
+
         modo = self.radio_var.get()
         cat, tip, esp = self.cb_cat.get(), self.cb_tipo.get(), self.cb_esp.get()
         match = [d for d in self.dados_completos if d['categoria'] == cat and d['tipo'] == tip and d['especie'] == esp]
@@ -171,7 +212,7 @@ class AppUI(ctk.CTk):
     def run_background(self, modo, cid, cat_nome, pc, tp, se, ce):
         try:
             total, pasta = self.manager.iniciar_fluxo(modo, self.ent_de.get(), self.ent_ate.get(), cid, cat_nome, pc, tp, se, ce, self.atualizar_ui)
-            self.after(0, lambda: messagebox.showinfo("Fim", f"Sucesso! {total} itens processados."))
+            self.after(0, lambda: messagebox.showinfo("Sucesso", f"Processado com sucesso: {total} itens."))
             if total > 0 and platform.system() == "Windows": os.startfile(pasta)
         except Exception as e:
             self.after(0, lambda: messagebox.showerror("Erro", str(e)))
