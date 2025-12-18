@@ -19,6 +19,15 @@ class DataParser:
         return texto_limpo.upper()
 
     @staticmethod
+    def extrair_data_limpa(texto_bruto):
+        if not texto_bruto: return "-"
+        limpo = re.sub(r'<.*?>', '', texto_bruto).strip()
+        partes = limpo.split(' ')
+        if len(partes) > 1:
+            return " ".join(partes[1:])
+        return limpo
+
+    @staticmethod
     def processar_dados_completos(raw_string):
         documentos = []
         if not raw_string: return []
@@ -33,8 +42,8 @@ class DataParser:
                 match_ids = re.search(r"OpenDownloadDocumentos\('(\d+)','(\d+)','(\d+)','(.*?)'\)", registro)
                 if match_ids:
                     seq, versao, protocolo, modalidade = match_ids.groups()
-                    dt_ref = re.sub(r'<.*?>', '', campos[5]).strip()
-                    dt_ent = re.sub(r'<.*?>', '', campos[6]).strip()
+                    dt_ref = DataParser.extrair_data_limpa(campos[5])
+                    dt_ent = DataParser.extrair_data_limpa(campos[6])
                     
                     documentos.append({
                         "Código CVM": campos[0].strip(),
@@ -64,7 +73,8 @@ class DownloadManager:
         
         cat_limpa = self.parser.limpar_nome(nome_categoria)
         prefixo = "Downloads" if modo == "download" else "Base" if modo == "planilha" else "Coleta_Completa"
-        ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+        ts = datetime.now().strftime("%Y%m%d_%H%M%S") # Timestamp para pasta e arquivo
+        
         pasta_execucao = os.path.abspath(os.path.join(prefixo, f"{prefixo}_{cat_limpa}_{ts}"))
         self.file_mgr.criar_diretorio(pasta_execucao)
 
@@ -92,7 +102,9 @@ class DownloadManager:
         if modo in ["planilha", "ambos"]:
             df = pd.DataFrame(lista)
             df_export = df.drop(columns=['_ID_SEQ', '_PROTOCOLO'])
-            caminho_xlsx = os.path.join(pasta_execucao, f"Base_Coleta_{cat_limpa}.xlsx")
+            # NOME COM TIMESTAMP ADICIONADO AQUI
+            nome_xlsx = f"Base_Coleta_{cat_limpa}_{ts}.xlsx"
+            caminho_xlsx = os.path.join(pasta_execucao, nome_xlsx)
             df_export.to_excel(caminho_xlsx, index=False)
             if modo == "planilha": return total, pasta_execucao
 

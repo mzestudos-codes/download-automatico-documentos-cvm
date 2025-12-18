@@ -32,7 +32,6 @@ class AppUI(ctk.CTk):
         self.scroll_frame = ctk.CTkScrollableFrame(self, fg_color="transparent")
         self.scroll_frame.pack(fill="both", expand=True, padx=10, pady=10)
 
-        # --- SELETOR DE MODO ---
         self.mode_card = ctk.CTkFrame(self.scroll_frame, fg_color=COLOR_WHITE, corner_radius=15)
         self.mode_card.pack(padx=20, fill="x", pady=10)
         
@@ -55,7 +54,7 @@ class AppUI(ctk.CTk):
         self.ent_ate = self.create_date_input(d_frame, "Fim", 1, "18/12/2025")
 
         self.add_label("PALAVRAS-CHAVE (Separe por vírgula)")
-        self.ent_palavra = ctk.CTkEntry(self.card, placeholder_text="aumento, capital", height=32)
+        self.ent_palavra = ctk.CTkEntry(self.card, placeholder_text="Ex: aumento, capital", height=32)
         self.ent_palavra.pack(padx=25, fill="x", pady=2)
 
         self.busca_tp = self.add_search_field("BUSCAR TIPO PARTICIPANTE", lambda e: self.f_combo(self.busca_tp, self.cb_tp, list(self.dict_tipo_part.keys())))
@@ -172,7 +171,7 @@ class AppUI(ctk.CTk):
     def run_background(self, modo, cid, cat_nome, pc, tp, se, ce):
         try:
             total, pasta = self.manager.iniciar_fluxo(modo, self.ent_de.get(), self.ent_ate.get(), cid, cat_nome, pc, tp, se, ce, self.atualizar_ui)
-            self.after(0, lambda: messagebox.showinfo("Sucesso", f"Processado com sucesso: {total} itens."))
+            self.after(0, lambda: messagebox.showinfo("Fim", f"Sucesso! {total} itens processados."))
             if total > 0 and platform.system() == "Windows": os.startfile(pasta)
         except Exception as e:
             self.after(0, lambda: messagebox.showerror("Erro", str(e)))
