@@ -66,4 +66,3 @@ class FileManager:
         caminho_final = os.path.join(pasta, nome)
         with open(caminho_final, 'wb') as f:
             f.write(conteudo)
-        print(f"      [OK] Salvo: {nome}")

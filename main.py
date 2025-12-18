@@ -40,26 +40,24 @@ class AppUI(ctk.CTk):
         
         self.radio_var = ctk.StringVar(value="download")
         radio_frame = ctk.CTkFrame(self.mode_card, fg_color="transparent")
-        radio_frame.pack(pady=10)
+        radio_frame.pack(pady=10, fill="x")
         
-        ctk.CTkRadioButton(radio_frame, text="Download PDFs", variable=self.radio_var, value="download").pack(side="left", padx=20)
-        ctk.CTkRadioButton(radio_frame, text="Gerar Planilha (.xlsx)", variable=self.radio_var, value="planilha").pack(side="left", padx=20)
+        ctk.CTkRadioButton(radio_frame, text="Download PDFs", variable=self.radio_var, value="download").pack(side="left", expand=True)
+        ctk.CTkRadioButton(radio_frame, text="Planilha (.xlsx)", variable=self.radio_var, value="planilha").pack(side="left", expand=True)
+        ctk.CTkRadioButton(radio_frame, text="Ambos", variable=self.radio_var, value="ambos").pack(side="left", expand=True)
 
         self.card = ctk.CTkFrame(self.scroll_frame, fg_color=COLOR_WHITE, corner_radius=15)
         self.card.pack(padx=20, fill="both", expand=True, pady=5)
 
-        # Datas
         d_frame = ctk.CTkFrame(self.card, fg_color="transparent")
         d_frame.pack(fill="x", padx=25, pady=15)
         self.ent_de = self.create_date_input(d_frame, "Início", 0, "01/12/2025")
         self.ent_ate = self.create_date_input(d_frame, "Fim", 1, "18/12/2025")
 
-        # Palavra-chave
         self.add_label("PALAVRAS-CHAVE (Separe por vírgula)")
-        self.ent_palavra = ctk.CTkEntry(self.card, placeholder_text="Ex: aumento, capital", height=32)
+        self.ent_palavra = ctk.CTkEntry(self.card, placeholder_text="aumento, capital", height=32)
         self.ent_palavra.pack(padx=25, fill="x", pady=2)
 
-        # Filtros Corporativos com Busca
         self.busca_tp = self.add_search_field("BUSCAR TIPO PARTICIPANTE", lambda e: self.f_combo(self.busca_tp, self.cb_tp, list(self.dict_tipo_part.keys())))
         self.cb_tp = self.add_combo(list(self.dict_tipo_part.keys()))
 
@@ -69,7 +67,6 @@ class AppUI(ctk.CTk):
         self.busca_ce = self.add_search_field("BUSCAR CATEGORIA EMISSOR", lambda e: self.f_combo(self.busca_ce, self.cb_ce, list(self.dict_cat_emissor.keys())))
         self.cb_ce = self.add_combo(list(self.dict_cat_emissor.keys()))
 
-        # Filtros de Documento
         self.busca_cat_doc = self.add_search_field("BUSCAR CATEGORIA DOC", lambda e: self.f_cat_doc())
         self.cb_cat = self.add_combo([], self.on_cat_change)
 
@@ -79,17 +76,15 @@ class AppUI(ctk.CTk):
         self.busca_esp_doc = self.add_search_field("BUSCAR ESPÉCIE DOC", lambda e: self.f_esp_doc())
         self.cb_esp = self.add_combo([])
 
-        # Progresso e Botão
         self.progress = ctk.CTkProgressBar(self.card, height=6, progress_color=COLOR_ACCENT)
         self.progress.set(0)
         self.progress.pack(padx=30, fill="x", pady=15)
-        self.lbl_msg = ctk.CTkLabel(self.card, text="Aguardando comando...", font=("Inter", 11), text_color="#7F8487")
+        self.lbl_msg = ctk.CTkLabel(self.card, text="Pronto para processar", font=("Inter", 11), text_color="#7F8487")
         self.lbl_msg.pack()
 
-        self.btn = ctk.CTkButton(self.card, text="EXECUTAR", fg_color=COLOR_ACCENT, height=50, corner_radius=10, font=("Inter", 13, "bold"), command=self.disparar_processo)
+        self.btn = ctk.CTkButton(self.card, text="EXECUTAR AÇÃO", fg_color=COLOR_ACCENT, height=50, corner_radius=10, font=("Inter", 13, "bold"), command=self.disparar_processo)
         self.btn.pack(padx=30, fill="x", pady=20)
 
-    # --- MÉTODOS AUXILIARES ---
     def add_label(self, text):
         ctk.CTkLabel(self.card, text=text, font=("Inter", 9, "bold"), text_color="#7F8487").pack(anchor="w", padx=30, pady=(10, 0))
 
@@ -171,19 +166,18 @@ class AppUI(ctk.CTk):
         se = self.dict_sit_emissor.get(self.cb_se.get(), "-1")
         ce = self.dict_cat_emissor.get(self.cb_ce.get(), "-1")
         
-        self.btn.configure(state="disabled", text="EM CURSO...")
-        threading.Thread(target=self.run_background, args=(modo, match[0]['id'], self.ent_palavra.get(), tp, se, ce), daemon=True).start()
+        self.btn.configure(state="disabled", text="AGUARDE...")
+        threading.Thread(target=self.run_background, args=(modo, match[0]['id'], cat, self.ent_palavra.get(), tp, se, ce), daemon=True).start()
 
-    def run_background(self, modo, cid, pc, tp, se, ce):
+    def run_background(self, modo, cid, cat_nome, pc, tp, se, ce):
         try:
-            total, pasta = self.manager.iniciar_fluxo(modo, self.ent_de.get(), self.ent_ate.get(), cid, pc, tp, se, ce, self.atualizar_ui)
-            txt = f"{total} PDFs baixados." if modo == "download" else f"Planilha gerada com {total} registros ativos."
-            self.after(0, lambda: messagebox.showinfo("Fim", txt))
+            total, pasta = self.manager.iniciar_fluxo(modo, self.ent_de.get(), self.ent_ate.get(), cid, cat_nome, pc, tp, se, ce, self.atualizar_ui)
+            self.after(0, lambda: messagebox.showinfo("Sucesso", f"Processado com sucesso: {total} itens."))
             if total > 0 and platform.system() == "Windows": os.startfile(pasta)
         except Exception as e:
             self.after(0, lambda: messagebox.showerror("Erro", str(e)))
         finally:
-            self.after(0, lambda: self.btn.configure(state="normal", text="EXECUTAR"))
+            self.after(0, lambda: self.btn.configure(state="normal", text="EXECUTAR AÇÃO"))
 
 if __name__ == "__main__":
     AppUI().mainloop()
