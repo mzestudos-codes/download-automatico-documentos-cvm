@@ -45,20 +45,16 @@ class AppUI(ctk.CTk):
         self.ent_de = self.create_input(date_frame, "Início", 0, "01/12/2025")
         self.ent_ate = self.create_input(date_frame, "Fim", 1, "18/12/2025")
 
-        # PALAVRA-CHAVE
         lbl_pc = ctk.CTkLabel(self.card, text="PALAVRAS-CHAVE (Separe por vírgula)", font=ctk.CTkFont(size=9, weight="bold"), text_color="#7F8487")
         lbl_pc.pack(anchor="w", padx=30, pady=(8, 0))
         self.ent_palavra = ctk.CTkEntry(self.card, placeholder_text="Ex: aumento, capital", height=35, 
                                         corner_radius=6, border_width=1, border_color="#E5E5E5", fg_color="#FAFAFA")
         self.ent_palavra.pack(padx=25, fill="x", pady=2)
 
-        # BLOCOS DE FILTRO ORIGINAIS
         self.busca_cat = self.create_filter_block("CATEGORIA", self.filtrar_cat)
         self.cb_cat = self.create_styled_combo(self.ao_selecionar_categoria)
-
         self.busca_tipo = self.create_filter_block("TIPO", self.filtrar_tipo_ui)
         self.cb_tipo = self.create_styled_combo(self.ao_selecionar_tipo)
-
         self.busca_esp = self.create_filter_block("ESPÉCIE", self.filtrar_esp_ui)
         self.cb_esp = self.create_styled_combo(None)
 
@@ -151,6 +147,11 @@ class AppUI(ctk.CTk):
             self.cb_esp.configure(values=filtradas)
             self.cb_esp.set(filtradas[0])
 
+    def atualizar_ui(self, p, a, t):
+        # Esta função é chamada pelo business.py
+        self.progress.set(p/100)
+        self.lbl_msg.configure(text=f"Baixando arquivo {a} de {t}...", text_color=COLOR_ACCENT)
+
     def disparar_processo(self):
         match = [d for d in self.dados_completos if d['categoria'] == self.cb_cat.get() 
                  and d['tipo'] == self.cb_tipo.get() and d['especie'] == self.cb_esp.get()]
@@ -160,14 +161,14 @@ class AppUI(ctk.CTk):
 
     def run_background(self, cod_id, palavra_chave):
         try:
-            total, pasta = self.manager.iniciar_fluxo(self.ent_de.get(), self.ent_ate.get(), cod_id, palavra_chave, 
-                                                    lambda p, a, t: self.progress.set(p/100))
+            total, pasta = self.manager.iniciar_fluxo(self.ent_de.get(), self.ent_ate.get(), cod_id, palavra_chave, self.atualizar_ui)
             self.after(0, lambda: messagebox.showinfo("CVM Pro", f"Download concluído: {total} arquivos."))
+            self.after(0, lambda: self.lbl_msg.configure(text="Concluído!", text_color=COLOR_ACCENT))
             if total > 0 and platform.system() == "Windows": os.startfile(pasta)
         except Exception as e:
             self.after(0, lambda: messagebox.showerror("Erro", str(e)))
         finally:
-            self.btn.configure(state="normal", text="BAIXAR ARQUIVOS")
+            self.after(0, lambda: self.btn.configure(state="normal", text="BAIXAR ARQUIVOS"))
 
 if __name__ == "__main__":
     app = AppUI()
