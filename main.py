@@ -1,9 +1,6 @@
 import customtkinter as ctk
 from tkinter import messagebox
-import json
-import os
-import threading
-import platform
+import json, os, threading, platform
 from business import DownloadManager
 
 ctk.set_appearance_mode("light")
@@ -20,13 +17,12 @@ class AppUI(ctk.CTk):
         self.manager = DownloadManager()
         self.dados_completos = []
         
-        # Mapeamentos CVM
         self.dict_tipo_part = {"TODOS": "-1", "BDR Não Patrocinados": "7", "Companhia Aberta": "1", "Companhia Dispensada de Registro": "6", "Companhia Estrangeira": "2", "Companhia Incentivada Registrada": "8"}
         self.dict_sit_emissor = {"TODOS": "-1", "Em Falência": "4", "Em Liquidação Extrajudicial": "5", "Em liquidação judicial": "7", "Em Recuperação Extrajudicial": "9", "Em Recuperação Judicial ou Equivalente": "8", "Fase Operacional": "2", "Fase Pré-Operacional": "1", "Paralisada": "6"}
         self.dict_cat_emissor = {"TODOS": "-1", "Categoria A": "1", "Categoria B": "2", "Não Identificado": "99"}
 
-        self.title("Downloader CVM Pro")
-        self.geometry("640x920") 
+        self.title("CVM Pro - Coleta & Download")
+        self.geometry("640x950") 
         self.configure(fg_color=COLOR_BG)
         
         self.setup_ui()
@@ -36,23 +32,34 @@ class AppUI(ctk.CTk):
         self.scroll_frame = ctk.CTkScrollableFrame(self, fg_color="transparent")
         self.scroll_frame.pack(fill="both", expand=True, padx=10, pady=10)
 
-        ctk.CTkLabel(self.scroll_frame, text="CVM Downloader Pro", font=("Inter", 20, "bold"), text_color=COLOR_TEXT).pack(pady=10)
+        # --- SELETOR DE MODO ---
+        self.mode_card = ctk.CTkFrame(self.scroll_frame, fg_color=COLOR_WHITE, corner_radius=15)
+        self.mode_card.pack(padx=20, fill="x", pady=10)
+        
+        ctk.CTkLabel(self.mode_card, text="MODO DE OPERAÇÃO", font=("Inter", 10, "bold"), text_color=COLOR_ACCENT).pack(pady=(10,0))
+        
+        self.radio_var = ctk.StringVar(value="download")
+        radio_frame = ctk.CTkFrame(self.mode_card, fg_color="transparent")
+        radio_frame.pack(pady=10)
+        
+        ctk.CTkRadioButton(radio_frame, text="Download PDFs", variable=self.radio_var, value="download").pack(side="left", padx=20)
+        ctk.CTkRadioButton(radio_frame, text="Gerar Planilha (.xlsx)", variable=self.radio_var, value="planilha").pack(side="left", padx=20)
 
         self.card = ctk.CTkFrame(self.scroll_frame, fg_color=COLOR_WHITE, corner_radius=15)
         self.card.pack(padx=20, fill="both", expand=True, pady=5)
 
-        # DATAS
+        # Datas
         d_frame = ctk.CTkFrame(self.card, fg_color="transparent")
         d_frame.pack(fill="x", padx=25, pady=15)
         self.ent_de = self.create_date_input(d_frame, "Início", 0, "01/12/2025")
         self.ent_ate = self.create_date_input(d_frame, "Fim", 1, "18/12/2025")
 
-        # PALAVRA-CHAVE
+        # Palavra-chave
         self.add_label("PALAVRAS-CHAVE (Separe por vírgula)")
-        self.ent_palavra = ctk.CTkEntry(self.card, placeholder_text="aumento, capital", height=32)
+        self.ent_palavra = ctk.CTkEntry(self.card, placeholder_text="Ex: aumento, capital", height=32)
         self.ent_palavra.pack(padx=25, fill="x", pady=2)
 
-        # NOVOS FILTROS COM BUSCA
+        # Filtros Corporativos com Busca
         self.busca_tp = self.add_search_field("BUSCAR TIPO PARTICIPANTE", lambda e: self.f_combo(self.busca_tp, self.cb_tp, list(self.dict_tipo_part.keys())))
         self.cb_tp = self.add_combo(list(self.dict_tipo_part.keys()))
 
@@ -62,7 +69,7 @@ class AppUI(ctk.CTk):
         self.busca_ce = self.add_search_field("BUSCAR CATEGORIA EMISSOR", lambda e: self.f_combo(self.busca_ce, self.cb_ce, list(self.dict_cat_emissor.keys())))
         self.cb_ce = self.add_combo(list(self.dict_cat_emissor.keys()))
 
-        # FILTROS DE DOCUMENTO
+        # Filtros de Documento
         self.busca_cat_doc = self.add_search_field("BUSCAR CATEGORIA DOC", lambda e: self.f_cat_doc())
         self.cb_cat = self.add_combo([], self.on_cat_change)
 
@@ -72,16 +79,17 @@ class AppUI(ctk.CTk):
         self.busca_esp_doc = self.add_search_field("BUSCAR ESPÉCIE DOC", lambda e: self.f_esp_doc())
         self.cb_esp = self.add_combo([])
 
-        # PROGRESSO
+        # Progresso e Botão
         self.progress = ctk.CTkProgressBar(self.card, height=6, progress_color=COLOR_ACCENT)
         self.progress.set(0)
         self.progress.pack(padx=30, fill="x", pady=15)
-        self.lbl_msg = ctk.CTkLabel(self.card, text="Pronto para baixar", font=("Inter", 11), text_color="#7F8487")
+        self.lbl_msg = ctk.CTkLabel(self.card, text="Aguardando comando...", font=("Inter", 11), text_color="#7F8487")
         self.lbl_msg.pack()
 
-        self.btn = ctk.CTkButton(self.card, text="BAIXAR ARQUIVOS", fg_color=COLOR_ACCENT, height=45, corner_radius=10, command=self.disparar_processo)
+        self.btn = ctk.CTkButton(self.card, text="EXECUTAR", fg_color=COLOR_ACCENT, height=50, corner_radius=10, font=("Inter", 13, "bold"), command=self.disparar_processo)
         self.btn.pack(padx=30, fill="x", pady=20)
 
+    # --- MÉTODOS AUXILIARES ---
     def add_label(self, text):
         ctk.CTkLabel(self.card, text=text, font=("Inter", 9, "bold"), text_color="#7F8487").pack(anchor="w", padx=30, pady=(10, 0))
 
@@ -115,8 +123,7 @@ class AppUI(ctk.CTk):
 
     def carregar_dados(self):
         if os.path.exists("categorias.json"):
-            with open("categorias.json", 'r', encoding='utf-8') as f:
-                self.dados_completos = json.load(f)
+            with open("categorias.json", 'r', encoding='utf-8') as f: self.dados_completos = json.load(f)
             self.lista_cat_doc = sorted(list(set(d['categoria'] for d in self.dados_completos)))
             self.cb_cat.configure(values=self.lista_cat_doc)
             self.cb_cat.set(self.lista_cat_doc[0])
@@ -138,14 +145,12 @@ class AppUI(ctk.CTk):
             self.cb_esp.configure(values=esp); self.cb_esp.set("TODOS")
 
     def f_cat_doc(self):
-        self.f_combo(self.busca_cat_doc, self.cb_cat, self.lista_cat_doc)
-        self.on_cat_change(None)
+        self.f_combo(self.busca_cat_doc, self.cb_cat, self.lista_cat_doc); self.on_cat_change(None)
 
     def f_tipo_doc(self):
         tipos = sorted(list(set(d['tipo'] for d in self.dados_completos if d['categoria'] == self.cb_cat.get())))
         if "TODOS" not in tipos: tipos.insert(0, "TODOS")
-        self.f_combo(self.busca_tipo_doc, self.cb_tipo, tipos)
-        self.on_tipo_change(None)
+        self.f_combo(self.busca_tipo_doc, self.cb_tipo, tipos); self.on_tipo_change(None)
 
     def f_esp_doc(self):
         esps = sorted(list(set(d['especie'] for d in self.dados_completos if d['categoria'] == self.cb_cat.get() and d['tipo'] == self.cb_tipo.get())))
@@ -154,31 +159,31 @@ class AppUI(ctk.CTk):
 
     def atualizar_ui(self, p, a, t):
         self.progress.set(p/100)
-        self.lbl_msg.configure(text=f"Baixando {a} de {t}...", text_color=COLOR_ACCENT)
+        self.lbl_msg.configure(text=f"Processando {a} de {t}...", text_color=COLOR_ACCENT)
 
     def disparar_processo(self):
-        # BUSCA O ID REAL NO JSON
+        modo = self.radio_var.get()
         cat, tip, esp = self.cb_cat.get(), self.cb_tipo.get(), self.cb_esp.get()
         match = [d for d in self.dados_completos if d['categoria'] == cat and d['tipo'] == tip and d['especie'] == esp]
-        
         if not match: return messagebox.showwarning("Aviso", "Combine os filtros corretamente.")
         
         tp = self.dict_tipo_part.get(self.cb_tp.get(), "-1")
         se = self.dict_sit_emissor.get(self.cb_se.get(), "-1")
         ce = self.dict_cat_emissor.get(self.cb_ce.get(), "-1")
         
-        self.btn.configure(state="disabled", text="BUSCANDO...")
-        threading.Thread(target=self.run_background, args=(match[0]['id'], self.ent_palavra.get(), tp, se, ce), daemon=True).start()
+        self.btn.configure(state="disabled", text="EM CURSO...")
+        threading.Thread(target=self.run_background, args=(modo, match[0]['id'], self.ent_palavra.get(), tp, se, ce), daemon=True).start()
 
-    def run_background(self, cid, pc, tp, se, ce):
+    def run_background(self, modo, cid, pc, tp, se, ce):
         try:
-            total, pasta = self.manager.iniciar_fluxo(self.ent_de.get(), self.ent_ate.get(), cid, pc, tp, se, ce, self.atualizar_ui)
-            self.after(0, lambda: messagebox.showinfo("Sucesso", f"Download concluído: {total} arquivos."))
+            total, pasta = self.manager.iniciar_fluxo(modo, self.ent_de.get(), self.ent_ate.get(), cid, pc, tp, se, ce, self.atualizar_ui)
+            txt = f"{total} PDFs baixados." if modo == "download" else f"Planilha gerada com {total} registros ativos."
+            self.after(0, lambda: messagebox.showinfo("Fim", txt))
             if total > 0 and platform.system() == "Windows": os.startfile(pasta)
         except Exception as e:
             self.after(0, lambda: messagebox.showerror("Erro", str(e)))
         finally:
-            self.after(0, lambda: self.btn.configure(state="normal", text="BAIXAR ARQUIVOS"))
+            self.after(0, lambda: self.btn.configure(state="normal", text="EXECUTAR"))
 
 if __name__ == "__main__":
     AppUI().mainloop()
