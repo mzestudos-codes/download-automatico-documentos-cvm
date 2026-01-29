@@ -30,21 +30,32 @@ class DataParser:
         documentos = []
         if not raw_string: return []
         
+        # O portal CVM separa registros por '*'
         registros = raw_string.split('*')
         for registro in registros:
             if not registro or len(registro) < 20: continue
+            
+            # O separador de campos é '$&'
             campos = [c.strip() for c in registro.split('$&')]
-            if len(campos) < 8: continue
+            
+            # Validação mínima de colunas
+            if len(campos) < 6: continue
 
-            # Filtro rigoroso de Ativo
-            status_valido = False
-            for idx in [7, 8]:
-                if idx < len(campos) and campos[idx].upper() == "ATIVO":
-                    status_valido = True
-                    break
-            if not status_valido: continue
+            # Filtro de Ativo (Baseado no seu JSON, o status está no índice 7)
+            status = campos[7].upper() if len(campos) > 7 else ""
+            if "ATIVO" not in status: continue
 
-            # Extração de IDs
+            # --- CAPTURA E LIMPEZA DA ESPÉCIE ---
+            # No seu JSON, a espécie está no índice 4
+            especie_bruta = campos[4] if len(campos) > 4 else "-"
+            
+            # Remove tags como <spanOrder>, <span>, <i> etc
+            especie_limpa = re.sub(r'<.*?>', '', especie_bruta).strip()
+            
+            # Caso a limpeza deixe o campo vazio
+            if not especie_limpa: especie_limpa = "N/A"
+
+            # --- EXTRAÇÃO DE DADOS PARA DOWNLOAD ---
             id_seq = None
             m_id = re.search(r"(?:Documento=|Documentos\(')(\d{5,8})", registro)
             if m_id: id_seq = m_id.group(1)
@@ -57,34 +68,31 @@ class DataParser:
             if not m_p: m_p = re.search(r"ProtocoloEntrega=(\d+)", registro)
             protocolo = m_p.group(1) if m_p else ""
 
-            # Captura o descTipo real (Ex: IPE, AP, RE) - Está no 4º parâmetro do OpenDownloadDocumentos
             m_tipo = re.search(r"OpenDownloadDocumentos\('\d+','\d+','\d+','(.*?)'\)", registro)
             desc_tipo = m_tipo.group(1) if m_tipo else "RE"
-            
-            cat_nome = campos[2]
-
-            # Link Inteligente
-            if any(x in cat_nome.upper() for x in ["FRE", "ITR", "DFP", "FCA"]):
-                link = f"https://www.rad.cvm.gov.br/ENET/frmGerenciaPaginaFRE.aspx?NumeroSequencialDocumento={id_seq}&CodigoTipoInstituicao=1"
-            else:
-                link = f"https://www.rad.cvm.gov.br/ENET/frmExibirArquivoIPEExterno.aspx?NumeroProtocoloEntrega={protocolo}" if protocolo else "#"
 
             documentos.append({
                 "Código CVM": campos[0],
                 "Empresa": campos[1],
                 "Categoria": campos[2],
                 "Tipo": campos[3],
-                "Espécie": campos[11] if len(campos) > 11 else "-",
+                "Espécie": especie_limpa, # Agora pegando do lugar certo (Índice 4)
                 "Data Referência": DataParser.extrair_data_limpa(campos[5], False),
                 "Data Entrega": DataParser.extrair_data_limpa(campos[6], True),
                 "Status": "Ativo", 
                 "V": versao,
-                "Link do Documento": link,
+                "Link do Documento": LinkInteligente(id_seq, protocolo, campos[2]),
                 "_ID_SEQ": id_seq,
                 "_PROTOCOLO": protocolo,
                 "_DESC_TIPO": desc_tipo
             })
         return documentos
+
+# Função auxiliar apenas para organizar o código (pode colocar fora da classe ou dentro)
+def LinkInteligente(id_seq, protocolo, cat_nome):
+    if any(x in cat_nome.upper() for x in ["FRE", "ITR", "DFP", "FCA"]):
+        return f"https://www.rad.cvm.gov.br/ENET/frmGerenciaPaginaFRE.aspx?NumeroSequencialDocumento={id_seq}&CodigoTipoInstituicao=1"
+    return f"https://www.rad.cvm.gov.br/ENET/frmExibirArquivoIPEExterno.aspx?NumeroProtocoloEntrega={protocolo}" if protocolo else "#"
     
 class DownloadManager:
     def __init__(self):

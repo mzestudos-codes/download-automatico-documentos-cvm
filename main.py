@@ -25,7 +25,7 @@ class AppUI(ctk.CTk):
         self.dict_sit_emissor = {"TODOS": "-1", "Em Falência": "4", "Em Liquidação Extrajudicial": "5", "Em liquidação judicial": "7", "Em Recuperação Extrajudicial": "9", "Em Recuperação Judicial ou Equivalente": "8", "Fase Operacional": "2", "Fase Pré-Operacional": "1", "Paralisada": "6"}
         self.dict_cat_emissor = {"TODOS": "-1", "Categoria A": "1", "Categoria B": "2", "Não Identificado": "99"}
 
-        self.title("CVM Downloader - Pro")
+        self.title("CVM Downloader")
         self.after(0, lambda: self.state('zoomed')) 
         self.configure(fg_color=COLOR_BG)
         self.setup_ui()
