@@ -185,13 +185,37 @@ class AppUI(ctk.CTk):
         self.lbl_msg.configure(text=f"Item {a} de {t}...")
 
     # --- Métodos de Dados (Combos/Search) ---
+    # def carregar_dados(self):
+    #     p = resource_path("categorias.json")
+    #     if os.path.exists(p):
+    #         with open(p, 'r', encoding='utf-8') as f: self.dados_completos = json.load(f)
+    #         self.lista_cat_doc = sorted(list(set(d['categoria'] for d in self.dados_completos)))
+    #         self.cb_cat.configure(values=self.lista_cat_doc)
+    #         if self.lista_cat_doc: self.cb_cat.set(self.lista_cat_doc[0]); self.on_cat_change()
     def carregar_dados(self):
         p = resource_path("categorias.json")
         if os.path.exists(p):
-            with open(p, 'r', encoding='utf-8') as f: self.dados_completos = json.load(f)
+            with open(p, 'r', encoding='utf-8') as f: 
+                dados_brutos = json.load(f)
+            
+            # --- NOVO: FILTRO DE LIMPEZA ---
+            # Vamos guardar apenas os dados onde o ID começa com IPE ou EST
+            # E ignorar categorias que começam com "Tipo:" ou "Espécie:"
+            self.dados_completos = []
+            for d in dados_brutos:
+                cat = d['categoria']
+                # Verifica se é um ID válido da CVM e não é um título falso
+                if d['id'].startswith(("IPE", "EST")) and not cat.startswith(("Tipo:", "Espécie:")):
+                    self.dados_completos.append(d)
+            # ---------------------------------
+
+            # Agora criamos a lista de categorias apenas com os dados limpos
             self.lista_cat_doc = sorted(list(set(d['categoria'] for d in self.dados_completos)))
             self.cb_cat.configure(values=self.lista_cat_doc)
-            if self.lista_cat_doc: self.cb_cat.set(self.lista_cat_doc[0]); self.on_cat_change()
+            
+            if self.lista_cat_doc: 
+                self.cb_cat.set(self.lista_cat_doc[0])
+                self.on_cat_change() # Isto vai acionar a cascata automaticamente!
 
     def on_cat_change(self, e=None):
         cat = self.cb_cat.get(); tipos = sorted(list(set(d['tipo'] for d in self.dados_completos if d['categoria'] == cat)))
