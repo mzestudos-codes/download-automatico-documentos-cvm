@@ -41,23 +41,36 @@ class DataParser:
             # Validação mínima de colunas
             if len(campos) < 6: continue
 
-            # --- CORREÇÃO: Filtro de Ativo ---
-            # Removemos espaços extras e comparamos de forma exata
+            # Filtro de Ativo rigoroso
             status = campos[7].upper().strip() if len(campos) > 7 else ""
-            
-            # Agora só continua se for EXATAMENTE "ATIVO"
             if status != "ATIVO": 
                 continue
 
-            # --- CAPTURA E LIMPEZA DA ESPÉCIE ---
-            # No seu JSON, a espécie está no índice 4
-            especie_bruta = campos[4] if len(campos) > 4 else "-"
+            # --- CORREÇÃO: CAPTURA E LIMPEZA DA ESPÉCIE ---
+            # A CVM manda no índice 4: <spanOrder>ASSUNTO</spanOrder>ESPÉCIE
+            especie_bruta = campos[4] if len(campos) > 4 else ""
             
-            # Remove tags como <spanOrder>, <span>, <i> etc
-            especie_limpa = re.sub(r'<.*?>', '', especie_bruta).strip()
+            # Vamos separar o que é assunto do que é espécie
+            if "</spanOrder>" in especie_bruta:
+                # Pega só o texto que vem DEPOIS do fechamento da tag (a Espécie real)
+                especie_limpa = especie_bruta.split("</spanOrder>")[-1]
+            else:
+                especie_limpa = especie_bruta
+                
+            # Limpa qualquer sujeira HTML que possa sobrar e remove espaços
+            especie_limpa = re.sub(r'<.*?>', '', especie_limpa).strip()
             
-            # Caso a limpeza deixe o campo vazio
-            if not especie_limpa: especie_limpa = "N/A"
+            # Se sobrar apenas um traço ou nada, convertemos para N/A
+            if especie_limpa in ["-", ""]: 
+                especie_limpa = "N/A"
+
+            # --- CAPTURA DE NOVOS CAMPOS PARA A PLANILHA ---
+            modalidade = campos[9].strip() if len(campos) > 9 else "-"
+            
+            # Assunto vem limpinho no índice 11
+            assunto = campos[11].strip() if len(campos) > 11 else "-"
+            if not assunto: 
+                assunto = "-"
 
             # --- EXTRAÇÃO DE DADOS PARA DOWNLOAD ---
             id_seq = None
@@ -80,11 +93,13 @@ class DataParser:
                 "Empresa": campos[1],
                 "Categoria": campos[2],
                 "Tipo": campos[3],
-                "Espécie": especie_limpa, # Agora pegando do lugar certo (Índice 4)
-                "Data Referência": DataParser.extrair_data_limpa(campos[5], False),
-                "Data Entrega": DataParser.extrair_data_limpa(campos[6], True),
-                "Status": status.capitalize(), # Agora reflete o status real de forma limpa ("Ativo")
+                "Espécie": especie_limpa, 
+                "Data Referência": DataParser.extrair_data_limpa(campos[5], False) if len(campos) > 5 else "-",
+                "Data Entrega": DataParser.extrair_data_limpa(campos[6], True) if len(campos) > 6 else "-",
+                "Status": status.capitalize(), 
                 "V": versao,
+                "Modalidade": modalidade,
+                "Assunto": assunto,
                 "Link do Documento": LinkInteligente(id_seq, protocolo, campos[2]),
                 "_ID_SEQ": id_seq,
                 "_PROTOCOLO": protocolo,
@@ -92,7 +107,7 @@ class DataParser:
             })
         return documentos
 
-# Função auxiliar apenas para organizar o código (pode colocar fora da classe ou dentro)
+# Função auxiliar
 def LinkInteligente(id_seq, protocolo, cat_nome):
     if any(x in cat_nome.upper() for x in ["FRE", "ITR", "DFP", "FCA"]):
         return f"https://www.rad.cvm.gov.br/ENET/frmGerenciaPaginaFRE.aspx?NumeroSequencialDocumento={id_seq}&CodigoTipoInstituicao=1"
@@ -153,7 +168,7 @@ class DownloadManager:
                         h = self.client.capturar_hash_dinamico(d['_ID_SEQ'])
                         
                         if h:
-                            # 2. Delay para o servidor processar a requisição do hash
+                            # 2. Delay para o servidor processar
                             time.sleep(2) 
                             
                             t_doc = "FREWEB" if "FRE" in cat_up else "ITRWEB" if "ITR" in cat_up else "DFPWEB"
