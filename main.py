@@ -24,6 +24,43 @@ class AppUI(ctk.CTk):
         self.dict_tipo_part = {"TODOS": "-1", "BDR Não Patrocinados": "7", "Companhia Aberta": "1", "Companhia Dispensada de Registro": "6", "Companhia Estrangeira": "2", "Companhia Incentivada Registrada": "8"}
         self.dict_sit_emissor = {"TODOS": "-1", "Em Falência": "4", "Em Liquidação Extrajudicial": "5", "Em liquidação judicial": "7", "Em Recuperação Extrajudicial": "9", "Em Recuperação Judicial ou Equivalente": "8", "Fase Operacional": "2", "Fase Pré-Operacional": "1", "Paralisada": "6"}
         self.dict_cat_emissor = {"TODOS": "-1", "Categoria A": "1", "Categoria B": "2", "Não Identificado": "99"}
+        
+        # --- NOVO: Dicionário do Setor de Atividade ---
+        self.dict_setor_atividade = {
+            "TODOS": "-1", "Agricultura (Açúcar, Álcool e Cana)": "1210", "Alimentos": "1220", 
+            "Arrendamento Mercantil": "1260", "Bancos": "1240", "Bebidas e Fumo": "1090", 
+            "Bolsas de Valores/Mercadorias e Futuros": "1410", "Brinquedos e Lazer": "1400", 
+            "Comércio (Atacado e Varejo)": "1190", "Comércio Exterior": "1200", 
+            "Comunicação e Informática": "1150", "Construção Civil, Mat. Constr. e Decoração": "1110", 
+            "Cooperativas": "1230", "Crédito Imobiliário": "1300", "Educação": "1380", 
+            "Embalagens": "1330", "Emp. Adm. Part. - Agricultura (Açúcar, Álcool e Cana)": "3210", 
+            "Emp. Adm. Part. - Alimentos": "3220", "Emp. Adm. Part. - Arrendamento Mercantil": "3260", 
+            "Emp. Adm. Part. - Bancos": "3240", "Emp. Adm. Part. - Bebidas e Fumo": "3090", 
+            "Emp. Adm. Part. - Brinquedos e Lazer": "3400", "Emp. Adm. Part. - Comércio (Atacado e Varejo)": "3190", 
+            "Emp. Adm. Part. - Comércio Exterior": "3200", "Emp. Adm. Part. - Comunicação e Informática": "3150", 
+            "Emp. Adm. Part. - Const. Civil, Mat. Const. e Decoração": "3110", "Emp. Adm. Part. - Cooperativas": "3230", 
+            "Emp. Adm. Part. - Crédito Imobiliário": "3300", "Emp. Adm. Part. - Educação": "3380", 
+            "Emp. Adm. Part. - Embalagens": "3330", "Emp. Adm. Part. - Energia Elétrica": "3120", 
+            "Emp. Adm. Part. - Extração Mineral": "3030", "Emp. Adm. Part. - Factoring": "3290", 
+            "Emp. Adm. Part. - Farmacêutico e Higiene": "3080", "Emp. Adm. Part. - Gráficas e Editoras": "3100", 
+            "Emp. Adm. Part. - Hospedagem e Turismo": "3180", "Emp. Adm. Part. - Intermediação Financeira": "3280", 
+            "Emp. Adm. Part. - Máqs., Equip., Veíc. e Peças": "3070", "Emp. Adm. Part. - Metalurgia e Siderurgia": "3060", 
+            "Emp. Adm. Part. - Papel e Celulose": "3040", "Emp. Adm. Part. - Pesca": "3320", 
+            "Emp. Adm. Part. - Petróleo e Gás": "3010", "Emp. Adm. Part. - Petroquímicos e Borracha": "3020", 
+            "Emp. Adm. Part. - Previdência Privada": "3270", "Emp. Adm. Part. - Reflorestamento": "3310", 
+            "Emp. Adm. Part. - Saneamento, Serv. Água e Gás": "3160", "Emp. Adm. Part. - Securitização de Recebíveis": "3390", 
+            "Emp. Adm. Part. - Seguradoras e Corretoras": "3250", "Emp. Adm. Part. - Sem Setor Principal": "3990", 
+            "Emp. Adm. Part. - Serviços médicos": "3170", "Emp. Adm. Part. - Serviços Transporte e Logística": "3140", 
+            "Emp. Adm. Part. - Telecomunicações": "3130", "Emp. Adm. Part. - Têxtil e Vestuário": "3050", 
+            "Emp. Adm. Part.-Bolsas de Valores/Mercadorias e Futuros": "3410", "Energia Elétrica": "1120", 
+            "Extração Mineral": "1030", "Factoring": "1290", "Farmacêutico e Higiene": "1080", 
+            "Gráficas e Editoras": "1100", "Hospedagem e Turismo": "1180", "Intermediação Financeira": "1280", 
+            "Máquinas, Equipamentos, Veículos e Peças": "1070", "Metalurgia e Siderurgia": "1060", 
+            "Papel e Celulose": "1040", "Pesca": "1320", "Petróleo e Gás": "1010", "Petroquímicos e Borracha": "1020", 
+            "Previdência Privada": "1270", "Reflorestamento": "1310", "Saneamento, Serv. Água e Gás": "1160", 
+            "Securitização de Recebíveis": "1390", "Seguradoras e Corretoras": "1250", "Serviços médicos": "1170", 
+            "Serviços Transporte e Logística": "1140", "Telecomunicações": "1130", "Têxtil e Vestuário": "1050"
+        }
 
         self.title("CVM Downloader")
         self.after(0, lambda: self.state('zoomed')) 
@@ -67,6 +104,8 @@ class AppUI(ctk.CTk):
         self.cb_tp = self.create_grid_combo(e_grid, "TIPO PARTICIPANTE", list(self.dict_tipo_part.keys()), 0)
         self.cb_se = self.create_grid_combo(e_grid, "SITUAÇÃO EMISSOR", list(self.dict_sit_emissor.keys()), 1)
         self.cb_ce = self.create_grid_combo(e_grid, "CATEGORIA REGISTRO", list(self.dict_cat_emissor.keys()), 2)
+        # --- NOVO: Adicionando Setor de Atividade na coluna 3 ---
+        self.cb_sa = self.create_grid_combo(e_grid, "SETOR DE ATIVIDADE", list(self.dict_setor_atividade.keys()), 3)
 
         # Documentos
         d_card = self.create_card("CLASSIFICAÇÃO DO DOCUMENTO")
@@ -165,8 +204,25 @@ class AppUI(ctk.CTk):
 
     def run_background(self, modo, ids, nome_cat, pc):
         try:
-            tp, se, ce = self.dict_tipo_part.get(self.cb_tp.get(), "-1"), self.dict_sit_emissor.get(self.cb_se.get(), "-1"), self.dict_cat_emissor.get(self.cb_ce.get(), "-1")
-            total, pasta = self.manager.iniciar_fluxo(modo, self.ent_de.get(), self.ent_ate.get(), ids, nome_cat, pc, tp, se, ce, self.atualizar_ui)
+            # --- NOVO: Captura do Setor de Atividade e Chamada Segura por Nomes (kwargs) ---
+            tp = self.dict_tipo_part.get(self.cb_tp.get(), "-1")
+            se = self.dict_sit_emissor.get(self.cb_se.get(), "-1")
+            ce = self.dict_cat_emissor.get(self.cb_ce.get(), "-1")
+            sa = self.dict_setor_atividade.get(self.cb_sa.get(), "-1")
+            
+            total, pasta = self.manager.iniciar_fluxo(
+                modo=modo, 
+                data_de=self.ent_de.get(), 
+                data_ate=self.ent_ate.get(), 
+                cod_id=ids, 
+                nome_cat=nome_cat, 
+                pc=pc, 
+                tp=tp, 
+                se=se, 
+                ce=ce, 
+                sa=sa, # Inserimos aqui!
+                callback_progresso=self.atualizar_ui
+            )
             
             msg = f"Extração Finalizada!\n\nDocumentos: {total}\nLocal: {os.path.basename(pasta)}"
             self.after(0, lambda: messagebox.showinfo("Concluído", msg))
@@ -185,37 +241,24 @@ class AppUI(ctk.CTk):
         self.lbl_msg.configure(text=f"Item {a} de {t}...")
 
     # --- Métodos de Dados (Combos/Search) ---
-    # def carregar_dados(self):
-    #     p = resource_path("categorias.json")
-    #     if os.path.exists(p):
-    #         with open(p, 'r', encoding='utf-8') as f: self.dados_completos = json.load(f)
-    #         self.lista_cat_doc = sorted(list(set(d['categoria'] for d in self.dados_completos)))
-    #         self.cb_cat.configure(values=self.lista_cat_doc)
-    #         if self.lista_cat_doc: self.cb_cat.set(self.lista_cat_doc[0]); self.on_cat_change()
     def carregar_dados(self):
         p = resource_path("categorias.json")
         if os.path.exists(p):
             with open(p, 'r', encoding='utf-8') as f: 
                 dados_brutos = json.load(f)
             
-            # --- NOVO: FILTRO DE LIMPEZA ---
-            # Vamos guardar apenas os dados onde o ID começa com IPE ou EST
-            # E ignorar categorias que começam com "Tipo:" ou "Espécie:"
             self.dados_completos = []
             for d in dados_brutos:
                 cat = d['categoria']
-                # Verifica se é um ID válido da CVM e não é um título falso
                 if d['id'].startswith(("IPE", "EST")) and not cat.startswith(("Tipo:", "Espécie:")):
                     self.dados_completos.append(d)
-            # ---------------------------------
 
-            # Agora criamos a lista de categorias apenas com os dados limpos
             self.lista_cat_doc = sorted(list(set(d['categoria'] for d in self.dados_completos)))
             self.cb_cat.configure(values=self.lista_cat_doc)
             
             if self.lista_cat_doc: 
                 self.cb_cat.set(self.lista_cat_doc[0])
-                self.on_cat_change() # Isto vai acionar a cascata automaticamente!
+                self.on_cat_change() 
 
     def on_cat_change(self, e=None):
         cat = self.cb_cat.get(); tipos = sorted(list(set(d['tipo'] for d in self.dados_completos if d['categoria'] == cat)))

@@ -46,28 +46,21 @@ class DataParser:
             if status != "ATIVO": 
                 continue
 
-            # --- CORREÇÃO: CAPTURA E LIMPEZA DA ESPÉCIE ---
-            # A CVM manda no índice 4: <spanOrder>ASSUNTO</spanOrder>ESPÉCIE
+            # CAPTURA E LIMPEZA DA ESPÉCIE
             especie_bruta = campos[4] if len(campos) > 4 else ""
             
-            # Vamos separar o que é assunto do que é espécie
             if "</spanOrder>" in especie_bruta:
-                # Pega só o texto que vem DEPOIS do fechamento da tag (a Espécie real)
                 especie_limpa = especie_bruta.split("</spanOrder>")[-1]
             else:
                 especie_limpa = especie_bruta
                 
-            # Limpa qualquer sujeira HTML que possa sobrar e remove espaços
             especie_limpa = re.sub(r'<.*?>', '', especie_limpa).strip()
             
-            # Se sobrar apenas um traço ou nada, convertemos para N/A
             if especie_limpa in ["-", ""]: 
                 especie_limpa = "N/A"
 
-            # --- CAPTURA DE NOVOS CAMPOS PARA A PLANILHA ---
+            # CAPTURA DE NOVOS CAMPOS PARA A PLANILHA
             modalidade = campos[9].strip() if len(campos) > 9 else "-"
-            
-            # Assunto vem limpinho no índice 11
             assunto = campos[11].strip() if len(campos) > 11 else "-"
             if not assunto: 
                 assunto = "-"
@@ -125,7 +118,8 @@ class DownloadManager:
         with open(caminho_log, "a", encoding="utf-8") as f:
             f.write(f"[{ts}] {mensagem}\n")
 
-    def iniciar_fluxo(self, modo, data_de, data_ate, cod_id, nome_cat, pc="", tp="-1", se="-1", ce="-1", callback_progresso=None):
+    # --- NOVO: Adicionámos o parâmetro `sa` (Setor Atividade) na função ---
+    def iniciar_fluxo(self, modo, data_de, data_ate, cod_id, nome_cat, pc="", tp="-1", se="-1", ce="-1", sa="-1", callback_progresso=None):
         cat_folder = self.parser.limpar_nome(nome_cat)
         ts = datetime.now().strftime("%Y%m%d_%H%M%S")
         prefixo = "Downloads" if modo == "download" else "Base" if modo == "planilha" else "Coleta_Completa"
@@ -134,8 +128,9 @@ class DownloadManager:
         
         self.escrever_log(pasta, f"--- INICIANDO COLETA: {nome_cat} ---")
 
+        # --- NOVO: Injetámos a variável `sa` no payload da CVM ---
         payload = {
-            "dataDe": data_de, "dataAte": data_ate, "empresa": "", "setorAtividade": "-1", 
+            "dataDe": data_de, "dataAte": data_ate, "empresa": "", "setorAtividade": sa, 
             "categoriaEmissor": ce, "situacaoEmissor": se, "tipoParticipante": tp, 
             "dataReferencia": "", "categoria": cod_id, "periodo": "2", "horaIni": "", 
             "horaFim": "", "palavraChave": "," + pc if pc else "", "ultimaDtRef": "false", 
@@ -164,13 +159,10 @@ class DownloadManager:
                     nome_arq = f"{self.parser.limpar_nome(d['Empresa'], 80)}_{self.parser.limpar_nome(d['Categoria'], 40)}_ID{d['_ID_SEQ']}_v{d['V']}.pdf"
                     
                     if any(x in cat_up for x in ["FRE", "ITR", "DFP", "FCA"]):
-                        # 1. Captura Hash
                         h = self.client.capturar_hash_dinamico(d['_ID_SEQ'])
                         
                         if h:
-                            # 2. Delay para o servidor processar
                             time.sleep(2) 
-                            
                             t_doc = "FREWEB" if "FRE" in cat_up else "ITRWEB" if "ITR" in cat_up else "DFPWEB"
                             conteudo = self.client.baixar_via_relatorio({
                                 "reportIds": rep_ids, 
@@ -183,7 +175,6 @@ class DownloadManager:
                         else:
                             conteudo = b""
                     else:
-                        # Download PDF Normal
                         conteudo = self.client.baixar_arquivo_estatico({
                             "Tela": "ext", "numSequencia": d['_ID_SEQ'], "numVersao": d["V"], 
                             "numProtocolo": d["_PROTOCOLO"], "descTipo": d["_DESC_TIPO"], 
