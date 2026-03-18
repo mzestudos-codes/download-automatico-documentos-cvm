@@ -41,9 +41,13 @@ class DataParser:
             # Validação mínima de colunas
             if len(campos) < 6: continue
 
-            # Filtro de Ativo (Baseado no seu JSON, o status está no índice 7)
-            status = campos[7].upper() if len(campos) > 7 else ""
-            if "ATIVO" not in status: continue
+            # --- CORREÇÃO: Filtro de Ativo ---
+            # Removemos espaços extras e comparamos de forma exata
+            status = campos[7].upper().strip() if len(campos) > 7 else ""
+            
+            # Agora só continua se for EXATAMENTE "ATIVO"
+            if status != "ATIVO": 
+                continue
 
             # --- CAPTURA E LIMPEZA DA ESPÉCIE ---
             # No seu JSON, a espécie está no índice 4
@@ -79,7 +83,7 @@ class DataParser:
                 "Espécie": especie_limpa, # Agora pegando do lugar certo (Índice 4)
                 "Data Referência": DataParser.extrair_data_limpa(campos[5], False),
                 "Data Entrega": DataParser.extrair_data_limpa(campos[6], True),
-                "Status": "Ativo", 
+                "Status": status.capitalize(), # Agora reflete o status real de forma limpa ("Ativo")
                 "V": versao,
                 "Link do Documento": LinkInteligente(id_seq, protocolo, campos[2]),
                 "_ID_SEQ": id_seq,
