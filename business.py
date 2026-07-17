@@ -156,7 +156,7 @@ class DownloadManager:
                 if callback_progresso: callback_progresso(((i+1)/total)*100, i+1, total)
                 try:
                     cat_up = d['Categoria'].upper()
-                    nome_arq = f"{self.parser.limpar_nome(d['Empresa'], 80)}_{self.parser.limpar_nome(d['Categoria'], 40)}_ID{d['_ID_SEQ']}_v{d['V']}.pdf"
+                    nome_arq = f"{self.parser.limpar_nome(d['Empresa'], 80)}_{self.parser.limpar_nome(d['Categoria'], 40)}_ID{d['_PROTOCOLO']}_v{d['V']}.pdf"
                     
                     if any(x in cat_up for x in ["FRE", "ITR", "DFP", "FCA"]):
                         h = self.client.capturar_hash_dinamico(d['_ID_SEQ'])
