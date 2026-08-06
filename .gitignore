@@ -6,3 +6,5 @@
 *.xlsx
 /build
 /dist
+/.venv
+/.vscode

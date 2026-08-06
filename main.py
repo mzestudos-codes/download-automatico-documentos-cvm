@@ -198,17 +198,27 @@ class AppUI(ctk.CTk):
             match = [d for d in self.dados_completos if d['categoria'] == self.cb_cat.get() and d['tipo'] == self.cb_tipo.get() and d['especie'] == self.cb_esp.get()]
             if not match: return messagebox.showerror("Erro", "Selecione uma categoria.")
             ids = match[0]['id']
+            selected_categories_label = f"{self.cb_cat.get()} / {self.cb_tipo.get()} / {self.cb_esp.get()}"
+        else:
+            selected_categories_label = " | ".join([f"{c['categoria']} / {c['tipo']} / {c['especie']}" for c in self.categorias_selecionadas])
 
         self.btn.configure(state="disabled", text="PROCESSANDO...")
-        threading.Thread(target=self.run_background, args=(self.radio_var.get(), ids, nome, self.ent_palavra.get()), daemon=True).start()
+        threading.Thread(target=self.run_background, args=(self.radio_var.get(), ids, nome, self.ent_palavra.get(), selected_categories_label), daemon=True).start()
 
-    def run_background(self, modo, ids, nome_cat, pc):
+    def run_background(self, modo, ids, nome_cat, pc, selected_categories_label):
         try:
             # --- NOVO: Captura do Setor de Atividade e Chamada Segura por Nomes (kwargs) ---
             tp = self.dict_tipo_part.get(self.cb_tp.get(), "-1")
             se = self.dict_sit_emissor.get(self.cb_se.get(), "-1")
             ce = self.dict_cat_emissor.get(self.cb_ce.get(), "-1")
             sa = self.dict_setor_atividade.get(self.cb_sa.get(), "-1")
+            tp_label = self.cb_tp.get()
+            se_label = self.cb_se.get()
+            ce_label = self.cb_ce.get()
+            sa_label = self.cb_sa.get()
+            tipo_doc = self.cb_tipo.get()
+            esp_doc = self.cb_esp.get()
+            categoria_doc = self.cb_cat.get()
             
             total, pasta = self.manager.iniciar_fluxo(
                 modo=modo, 
@@ -221,6 +231,14 @@ class AppUI(ctk.CTk):
                 se=se, 
                 ce=ce, 
                 sa=sa, # Inserimos aqui!
+                tp_label=tp_label,
+                se_label=se_label,
+                ce_label=ce_label,
+                sa_label=sa_label,
+                tipo_doc=tipo_doc,
+                esp_doc=esp_doc,
+                categoria_doc=categoria_doc,
+                selected_categories_label=selected_categories_label,
                 callback_progresso=self.atualizar_ui
             )
             
@@ -233,7 +251,7 @@ class AppUI(ctk.CTk):
             self.after(0, self.reset_ui)
 
     def reset_ui(self):
-        self.btn.configure(state="normal", text="INICIAR PROCESSAMENTO INSTITUCIONAL")
+        self.btn.configure(state="normal", text="INICIAR PROCESSAMENTO")
         self.progress.set(0); self.lbl_msg.configure(text="Pronto para nova consulta.")
 
     def atualizar_ui(self, p, a, t):

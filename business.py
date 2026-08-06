@@ -103,8 +103,8 @@ class DataParser:
 # Função auxiliar
 def LinkInteligente(id_seq, protocolo, cat_nome):
     if any(x in cat_nome.upper() for x in ["FRE", "ITR", "DFP", "FCA"]):
-        return f"https://www.rad.cvm.gov.br/ENET/frmGerenciaPaginaFRE.aspx?NumeroSequencialDocumento={id_seq}&CodigoTipoInstituicao=1"
-    return f"https://www.rad.cvm.gov.br/ENET/frmExibirArquivoIPEExterno.aspx?NumeroProtocoloEntrega={protocolo}" if protocolo else "#"
+        return f"https://www.rad.cvm.gov.br/ENETWeb/frmGerenciaPaginaFRE.aspx?NumeroSequencialDocumento={id_seq}&CodigoTipoInstituicao=1"
+    return f"https://www.rad.cvm.gov.br/ENETWeb/frmExibirArquivoIPEExterno.aspx?NumeroProtocoloEntrega={protocolo}" if protocolo else "#"
     
 class DownloadManager:
     def __init__(self):
@@ -119,7 +119,7 @@ class DownloadManager:
             f.write(f"[{ts}] {mensagem}\n")
 
     # --- NOVO: Adicionámos o parâmetro `sa` (Setor Atividade) na função ---
-    def iniciar_fluxo(self, modo, data_de, data_ate, cod_id, nome_cat, pc="", tp="-1", se="-1", ce="-1", sa="-1", callback_progresso=None):
+    def iniciar_fluxo(self, modo, data_de, data_ate, cod_id, nome_cat, pc="", tp="-1", se="-1", ce="-1", sa="-1", tp_label="", se_label="", ce_label="", sa_label="", tipo_doc="", esp_doc="", categoria_doc="", selected_categories_label="", callback_progresso=None):
         cat_folder = self.parser.limpar_nome(nome_cat)
         ts = datetime.now().strftime("%Y%m%d_%H%M%S")
         prefixo = "Downloads" if modo == "download" else "Base" if modo == "planilha" else "Coleta_Completa"
@@ -127,6 +127,20 @@ class DownloadManager:
         self.file_mgr.criar_diretorio(pasta)
         
         self.escrever_log(pasta, f"--- INICIANDO COLETA: {nome_cat} ---")
+        modo_desc = "Download" if modo == "download" else "Planilha" if modo == "planilha" else "Download + Planilha"
+        self.escrever_log(pasta, "Parâmetros de execução:")
+        self.escrever_log(pasta, f"  Modo: {modo_desc}")
+        self.escrever_log(pasta, f"  Data início: {data_de}")
+        self.escrever_log(pasta, f"  Data fim: {data_ate}")
+        self.escrever_log(pasta, f"  Categoria Documento: {categoria_doc}")
+        self.escrever_log(pasta, f"  Tipo Documento: {tipo_doc}")
+        self.escrever_log(pasta, f"  Espécie Documento: {esp_doc}")
+        self.escrever_log(pasta, f"  Categoria selecionada: {nome_cat} ({selected_categories_label})")
+        self.escrever_log(pasta, f"  Palavra-chave: {pc if pc else 'NENHUMA'}")
+        self.escrever_log(pasta, f"  Tipo Participante: {tp_label} ({tp})")
+        self.escrever_log(pasta, f"  Situação Emissor: {se_label} ({se})")
+        self.escrever_log(pasta, f"  Categoria Emissor: {ce_label} ({ce})")
+        self.escrever_log(pasta, f"  Setor de Atividade: {sa_label} ({sa})")
 
         # --- NOVO: Injetámos a variável `sa` no payload da CVM ---
         payload = {
