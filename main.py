@@ -1,8 +1,8 @@
 import customtkinter as ctk
-from tkinter import messagebox
+from tkinter import messagebox, filedialog
 import json, os, threading, platform, re, sys
 from datetime import datetime
-from business import DownloadManager
+from business import DownloadManager, DataParser
 
 def resource_path(relative_path):
     try: base_path = sys._MEIPASS
@@ -20,6 +20,7 @@ class AppUI(ctk.CTk):
         self.manager = DownloadManager()
         self.dados_completos = []
         self.categorias_selecionadas = []
+        self.custom_nome_var = ctk.BooleanVar(value=False)
         
         self.dict_tipo_part = {"TODOS": "-1", "BDR Não Patrocinados": "7", "Companhia Aberta": "1", "Companhia Dispensada de Registro": "6", "Companhia Estrangeira": "2", "Companhia Incentivada Registrada": "8"}
         self.dict_sit_emissor = {"TODOS": "-1", "Em Falência": "4", "Em Liquidação Extrajudicial": "5", "Em liquidação judicial": "7", "Em Recuperação Extrajudicial": "9", "Em Recuperação Judicial ou Equivalente": "8", "Fase Operacional": "2", "Fase Pré-Operacional": "1", "Paralisada": "6"}
@@ -81,10 +82,61 @@ class AppUI(ctk.CTk):
         # Modo
         self.radio_var = ctk.StringVar(value="download")
         m_card = self.create_card("CONFIGURAÇÃO DE EXECUÇÃO")
+        
+        # Radio buttons de Modo
         r_frame = ctk.CTkFrame(m_card, fg_color="transparent")
-        r_frame.pack(pady=20, padx=30, fill="x")
+        r_frame.pack(pady=(15, 10), padx=25, fill="x")
         for t, v in [("Download PDFs", "download"), ("Gerar Planilha", "planilha"), ("Ambos", "ambos")]:
-            ctk.CTkRadioButton(r_frame, text=t, variable=self.radio_var, value=v, font=("Segoe UI", 13, "bold")).pack(side="left", expand=True)
+            ctk.CTkRadioButton(r_frame, text=t, variable=self.radio_var, value=v, font=("Segoe UI", 13, "bold"), command=self.on_modo_change).pack(side="left", expand=True)
+
+        # Campo: Nome da Planilha
+        f_nome_planilha = ctk.CTkFrame(m_card, fg_color="transparent")
+        f_nome_planilha.pack(fill="x", padx=25, pady=(5, 10))
+        
+        f_nome_header = ctk.CTkFrame(f_nome_planilha, fg_color="transparent")
+        f_nome_header.pack(fill="x", pady=(0, 4))
+        
+        ctk.CTkLabel(f_nome_header, text="NOME DO ARQUIVO DA PLANILHA (.XLSX)", font=("Segoe UI", 11, "bold"), text_color=COLOR_TEXT_LABEL).pack(side="left")
+        self.chk_custom_nome = ctk.CTkCheckBox(
+            f_nome_header, 
+            text="Nome personalizado", 
+            variable=self.custom_nome_var, 
+            font=("Segoe UI", 11), 
+            command=self.on_toggle_custom_nome,
+            checkbox_height=18,
+            checkbox_width=18
+        )
+        self.chk_custom_nome.pack(side="right")
+        
+        self.ent_nome_planilha = ctk.CTkEntry(f_nome_planilha, height=42, corner_radius=10)
+        self.ent_nome_planilha.pack(fill="x")
+        self.ent_nome_planilha.bind('<KeyRelease>', lambda e: self.on_nome_planilha_edit())
+
+        # Campo: Pasta de Salvamento
+        f_destino = ctk.CTkFrame(m_card, fg_color="transparent")
+        f_destino.pack(fill="x", padx=25, pady=(5, 20))
+        
+        ctk.CTkLabel(f_destino, text="PASTA DE SALVAMENTO", font=("Segoe UI", 11, "bold"), text_color=COLOR_TEXT_LABEL).pack(anchor="w", pady=(0, 4))
+        
+        f_dest_input = ctk.CTkFrame(f_destino, fg_color="transparent")
+        f_dest_input.pack(fill="x")
+        
+        self.ent_pasta_destino = ctk.CTkEntry(f_dest_input, height=42, corner_radius=10)
+        self.ent_pasta_destino.pack(side="left", fill="x", expand=True, padx=(0, 10))
+        self.ent_pasta_destino.insert(0, os.path.abspath("."))
+        
+        self.btn_pasta_destino = ctk.CTkButton(
+            f_dest_input, 
+            text="Selecionar Pasta", 
+            width=140, 
+            height=42, 
+            corner_radius=10,
+            fg_color=COLOR_PRIMARY, 
+            hover_color=COLOR_ACCENT, 
+            font=("Segoe UI", 12, "bold"), 
+            command=self.selecionar_pasta_destino
+        )
+        self.btn_pasta_destino.pack(side="right")
 
         # Datas e Palavras
         s_card = self.create_card("DATAS E PALAVRAS-CHAVE")
@@ -132,8 +184,60 @@ class AppUI(ctk.CTk):
         self.progress.set(0); self.progress.pack(fill="x")
         self.lbl_msg = ctk.CTkLabel(self.container, text="Aguardando parâmetros...", font=("Segoe UI", 13, "italic"), text_color=COLOR_TEXT_LABEL)
         self.lbl_msg.pack(pady=10)
+        self.on_modo_change()
 
-    # --- UI Helpers ---
+    # --- UI Helpers & Controle de Modos/Planilha ---
+    def on_modo_change(self):
+        modo = self.radio_var.get()
+        if modo == "download":
+            self.ent_nome_planilha.configure(state="disabled")
+            self.chk_custom_nome.configure(state="disabled")
+            self.btn.configure(text="INICIAR DOWNLOAD (PDFS)")
+        else:
+            self.ent_nome_planilha.configure(state="normal")
+            self.chk_custom_nome.configure(state="normal")
+            if modo == "planilha":
+                self.btn.configure(text="GERAR PLANILHA (.XLSX)")
+            else:
+                self.btn.configure(text="INICIAR DOWNLOAD + PLANILHA")
+            if not self.custom_nome_var.get():
+                self.atualizar_previa_nome_planilha()
+
+    def on_toggle_custom_nome(self):
+        if not self.custom_nome_var.get():
+            self.atualizar_previa_nome_planilha()
+
+    def on_nome_planilha_edit(self):
+        if not self.custom_nome_var.get():
+            self.custom_nome_var.set(True)
+
+    def atualizar_previa_nome_planilha(self):
+        if self.custom_nome_var.get():
+            return
+        if self.categorias_selecionadas:
+            cat_nome = "MULTIPLAS"
+        elif hasattr(self, 'cb_cat') and self.cb_cat.get():
+            cat_nome = self.cb_cat.get()
+        else:
+            cat_nome = "GERAL"
+        
+        cat_limpo = DataParser.limpar_nome(cat_nome, 40)
+        dt_str = datetime.now().strftime("%Y%m%d")
+        nome_sugerido = f"Base_Coleta_{cat_limpo}_{dt_str}.xlsx"
+        
+        self.ent_nome_planilha.configure(state="normal")
+        self.ent_nome_planilha.delete(0, "end")
+        self.ent_nome_planilha.insert(0, nome_sugerido)
+        if self.radio_var.get() == "download":
+            self.ent_nome_planilha.configure(state="disabled")
+
+    def selecionar_pasta_destino(self):
+        caminho_inicial = self.ent_pasta_destino.get().strip() or os.path.abspath(".")
+        pasta = filedialog.askdirectory(title="Selecione a pasta de salvamento", initialdir=caminho_inicial)
+        if pasta:
+            self.ent_pasta_destino.delete(0, "end")
+            self.ent_pasta_destino.insert(0, os.path.normpath(pasta))
+
     def create_card(self, title):
         ctk.CTkLabel(self.container, text=title, font=("Segoe UI", 12, "bold"), text_color=COLOR_PRIMARY).pack(anchor="w", padx=5, pady=(15, 5))
         c = ctk.CTkFrame(self.container, fg_color=COLOR_CARD, corner_radius=15, border_width=1, border_color=COLOR_BORDER)
@@ -174,9 +278,11 @@ class AppUI(ctk.CTk):
         match = [d for d in self.dados_completos if d['categoria'] == cat and d['tipo'] == tip and d['especie'] == esp]
         if match and match[0] not in self.categorias_selecionadas:
             self.categorias_selecionadas.append(match[0]); self.atualizar_visual_lista()
+            self.atualizar_previa_nome_planilha()
 
     def limpar_categorias(self):
         self.categorias_selecionadas = []; self.atualizar_visual_lista()
+        self.atualizar_previa_nome_planilha()
 
     def atualizar_visual_lista(self):
         self.txt_lista.configure(state="normal"); self.txt_lista.delete("1.0", "end")
@@ -230,7 +336,7 @@ class AppUI(ctk.CTk):
                 tp=tp, 
                 se=se, 
                 ce=ce, 
-                sa=sa, # Inserimos aqui!
+                sa=sa,
                 tp_label=tp_label,
                 se_label=se_label,
                 ce_label=ce_label,
@@ -239,6 +345,9 @@ class AppUI(ctk.CTk):
                 esp_doc=esp_doc,
                 categoria_doc=categoria_doc,
                 selected_categories_label=selected_categories_label,
+                pasta_destino=self.ent_pasta_destino.get().strip(),
+                nome_planilha=self.ent_nome_planilha.get().strip(),
+                is_custom_nome=self.custom_nome_var.get() and (modo in ["planilha", "ambos"]),
                 callback_progresso=self.atualizar_ui
             )
             
@@ -251,7 +360,8 @@ class AppUI(ctk.CTk):
             self.after(0, self.reset_ui)
 
     def reset_ui(self):
-        self.btn.configure(state="normal", text="INICIAR PROCESSAMENTO")
+        self.btn.configure(state="normal")
+        self.on_modo_change()
         self.progress.set(0); self.lbl_msg.configure(text="Pronto para nova consulta.")
 
     def atualizar_ui(self, p, a, t):
@@ -282,6 +392,7 @@ class AppUI(ctk.CTk):
         cat = self.cb_cat.get(); tipos = sorted(list(set(d['tipo'] for d in self.dados_completos if d['categoria'] == cat)))
         if "TODOS" not in tipos: tipos.insert(0, "TODOS")
         self.cb_tipo.configure(values=tipos); self.cb_tipo.set("TODOS"); self.on_tipo_change()
+        self.atualizar_previa_nome_planilha()
 
     def on_tipo_change(self, e=None):
         cat, tip = self.cb_cat.get(), self.cb_tipo.get()

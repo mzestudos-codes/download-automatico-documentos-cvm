@@ -118,12 +118,24 @@ class DownloadManager:
         with open(caminho_log, "a", encoding="utf-8") as f:
             f.write(f"[{ts}] {mensagem}\n")
 
-    # --- NOVO: Adicionámos o parâmetro `sa` (Setor Atividade) na função ---
-    def iniciar_fluxo(self, modo, data_de, data_ate, cod_id, nome_cat, pc="", tp="-1", se="-1", ce="-1", sa="-1", tp_label="", se_label="", ce_label="", sa_label="", tipo_doc="", esp_doc="", categoria_doc="", selected_categories_label="", callback_progresso=None):
+    # --- Iniciar Fluxo com suporte a pasta_destino e nome_planilha personalizados ---
+    def iniciar_fluxo(self, modo, data_de, data_ate, cod_id, nome_cat, pc="", tp="-1", se="-1", ce="-1", sa="-1", tp_label="", se_label="", ce_label="", sa_label="", tipo_doc="", esp_doc="", categoria_doc="", selected_categories_label="", pasta_destino="", nome_planilha="", is_custom_nome=False, callback_progresso=None):
         cat_folder = self.parser.limpar_nome(nome_cat)
         ts = datetime.now().strftime("%Y%m%d_%H%M%S")
         prefixo = "Downloads" if modo == "download" else "Base" if modo == "planilha" else "Coleta_Completa"
-        pasta = os.path.abspath(os.path.join(prefixo, f"{prefixo}_{cat_folder}_{ts}"))
+        
+        # Se o usuário definiu nome personalizado, a pasta de destino segue exatamente esse nome
+        if is_custom_nome and nome_planilha and nome_planilha.strip():
+            nome_base_custom = os.path.splitext(os.path.basename(nome_planilha.strip()))[0].strip()
+            nome_pasta_custom = re.sub(r'[\\/*?:"<>|]', '', nome_base_custom).strip()
+            subpasta = nome_pasta_custom if nome_pasta_custom else f"{prefixo}_{cat_folder}_{ts}"
+        else:
+            subpasta = f"{prefixo}_{cat_folder}_{ts}"
+
+        if pasta_destino and pasta_destino.strip():
+            pasta = os.path.abspath(os.path.join(pasta_destino.strip(), subpasta))
+        else:
+            pasta = os.path.abspath(os.path.join(prefixo, subpasta))
         self.file_mgr.criar_diretorio(pasta)
         
         self.escrever_log(pasta, f"--- INICIANDO COLETA: {nome_cat} ---")
@@ -141,8 +153,9 @@ class DownloadManager:
         self.escrever_log(pasta, f"  Situação Emissor: {se_label} ({se})")
         self.escrever_log(pasta, f"  Categoria Emissor: {ce_label} ({ce})")
         self.escrever_log(pasta, f"  Setor de Atividade: {sa_label} ({sa})")
+        self.escrever_log(pasta, f"  Pasta destino: {pasta}")
 
-        # --- NOVO: Injetámos a variável `sa` no payload da CVM ---
+        # --- Injetámos a variável `sa` no payload da CVM ---
         payload = {
             "dataDe": data_de, "dataAte": data_ate, "empresa": "", "setorAtividade": sa, 
             "categoriaEmissor": ce, "situacaoEmissor": se, "tipoParticipante": tp, 
@@ -162,7 +175,17 @@ class DownloadManager:
 
         if modo in ["planilha", "ambos"]:
             df = pd.DataFrame(lista).drop(columns=['_ID_SEQ', '_PROTOCOLO', '_DESC_TIPO'], errors='ignore')
-            df.to_excel(os.path.join(pasta, f"Base_Coleta_{cat_folder}_{ts}.xlsx"), index=False)
+            if nome_planilha and nome_planilha.strip():
+                nome_arq_excel = nome_planilha.strip()
+                if not nome_arq_excel.lower().endswith(".xlsx"):
+                    nome_arq_excel += ".xlsx"
+                nome_arq_excel = re.sub(r'[\\/*?:"<>|]', "", nome_arq_excel)
+                if not nome_arq_excel.lower().endswith(".xlsx"):
+                    nome_arq_excel += ".xlsx"
+            else:
+                nome_arq_excel = f"Base_Coleta_{cat_folder}_{ts}.xlsx"
+            df.to_excel(os.path.join(pasta, nome_arq_excel), index=False)
+            self.escrever_log(pasta, f"Planilha salva: {nome_arq_excel}")
 
         if modo in ["download", "ambos"]:
             rep_ids = '1030,1000,1060,1090,1120,1150,1180,1210,1240,1270,1300,1330,1360,1390,1420,1450,1480,0,2030,2000,2060,2090,2120,2150,2180,2210,2240,2270,2300,2330,3030,3000,3060,4030,4000,4060,4090,4120,4150,4180,4210,5030,5000,5060,5090,5120,5150,6030,6000,6090,6120,6150,6180,7030,7000,7045,7060,7090,7120,7150,7180,7210,7240,8030,8000,8060,8095,8120,8155,8180,8210,8240,8270,8300,8335,8360,8390,8420,8450,8480,8510,8540,8545,8570,8575,8600,9030,9000,9045,9060,10045,10000,10030,10060,10090,10095,10120,10150,11030,11000,11060,11020,11090,12030,12000,12060,12090,12120,12150,12180,12210,12240,12270,13030,13000,13045'
