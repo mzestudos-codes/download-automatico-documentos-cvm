@@ -112,14 +112,18 @@ class DownloadManager:
         self.file_mgr = FileManager()
         self.parser = DataParser()
 
-    def escrever_log(self, pasta, mensagem):
+    def escrever_log(self, pasta, mensagem, callback_log=None):
         caminho_log = os.path.join(pasta, "execucao_detalhada.log")
         ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        linha = f"[{ts}] {mensagem}"
         with open(caminho_log, "a", encoding="utf-8") as f:
-            f.write(f"[{ts}] {mensagem}\n")
+            f.write(linha + "\n")
+        if callback_log:
+            try: callback_log(linha)
+            except Exception: pass
 
     # --- Iniciar Fluxo com suporte a pasta_destino e nome_planilha personalizados ---
-    def iniciar_fluxo(self, modo, data_de, data_ate, cod_id, nome_cat, pc="", tp="-1", se="-1", ce="-1", sa="-1", tp_label="", se_label="", ce_label="", sa_label="", tipo_doc="", esp_doc="", categoria_doc="", selected_categories_label="", pasta_destino="", nome_planilha="", is_custom_nome=False, callback_progresso=None):
+    def iniciar_fluxo(self, modo, data_de, data_ate, cod_id, nome_cat, pc="", tp="-1", se="-1", ce="-1", sa="-1", tp_label="", se_label="", ce_label="", sa_label="", tipo_doc="", esp_doc="", categoria_doc="", selected_categories_label="", pasta_destino="", nome_planilha="", is_custom_nome=False, callback_progresso=None, callback_log=None):
         cat_folder = self.parser.limpar_nome(nome_cat)
         ts = datetime.now().strftime("%Y%m%d_%H%M%S")
         prefixo = "Downloads" if modo == "download" else "Base" if modo == "planilha" else "Coleta_Completa"
@@ -138,22 +142,25 @@ class DownloadManager:
             pasta = os.path.abspath(os.path.join(prefixo, subpasta))
         self.file_mgr.criar_diretorio(pasta)
         
-        self.escrever_log(pasta, f"--- INICIANDO COLETA: {nome_cat} ---")
+        def log(msg):
+            self.escrever_log(pasta, msg, callback_log)
+
+        log(f"--- INICIANDO COLETA: {nome_cat} ---")
         modo_desc = "Download" if modo == "download" else "Planilha" if modo == "planilha" else "Download + Planilha"
-        self.escrever_log(pasta, "Parâmetros de execução:")
-        self.escrever_log(pasta, f"  Modo: {modo_desc}")
-        self.escrever_log(pasta, f"  Data início: {data_de}")
-        self.escrever_log(pasta, f"  Data fim: {data_ate}")
-        self.escrever_log(pasta, f"  Categoria Documento: {categoria_doc}")
-        self.escrever_log(pasta, f"  Tipo Documento: {tipo_doc}")
-        self.escrever_log(pasta, f"  Espécie Documento: {esp_doc}")
-        self.escrever_log(pasta, f"  Categoria selecionada: {nome_cat} ({selected_categories_label})")
-        self.escrever_log(pasta, f"  Palavra-chave: {pc if pc else 'NENHUMA'}")
-        self.escrever_log(pasta, f"  Tipo Participante: {tp_label} ({tp})")
-        self.escrever_log(pasta, f"  Situação Emissor: {se_label} ({se})")
-        self.escrever_log(pasta, f"  Categoria Emissor: {ce_label} ({ce})")
-        self.escrever_log(pasta, f"  Setor de Atividade: {sa_label} ({sa})")
-        self.escrever_log(pasta, f"  Pasta destino: {pasta}")
+        log("Parâmetros de execução:")
+        log(f"  Modo: {modo_desc}")
+        log(f"  Data início: {data_de}")
+        log(f"  Data fim: {data_ate}")
+        log(f"  Categoria Documento: {categoria_doc}")
+        log(f"  Tipo Documento: {tipo_doc}")
+        log(f"  Espécie Documento: {esp_doc}")
+        log(f"  Categoria selecionada: {nome_cat} ({selected_categories_label})")
+        log(f"  Palavra-chave: {pc if pc else 'NENHUMA'}")
+        log(f"  Tipo Participante: {tp_label} ({tp})")
+        log(f"  Situação Emissor: {se_label} ({se})")
+        log(f"  Categoria Emissor: {ce_label} ({ce})")
+        log(f"  Setor de Atividade: {sa_label} ({sa})")
+        log(f"  Pasta destino: {pasta}")
 
         # --- Injetámos a variável `sa` no payload da CVM ---
         payload = {
@@ -169,7 +176,7 @@ class DownloadManager:
         lista = self.parser.processar_dados_completos(dados_brutos)
         total = len(lista)
         
-        self.escrever_log(pasta, f"Registros ATIVOS identificados: {total}")
+        log(f"Registros ATIVOS identificados: {total}")
 
         if total == 0: return 0, pasta
 
@@ -185,7 +192,7 @@ class DownloadManager:
             else:
                 nome_arq_excel = f"Base_Coleta_{cat_folder}_{ts}.xlsx"
             df.to_excel(os.path.join(pasta, nome_arq_excel), index=False)
-            self.escrever_log(pasta, f"Planilha salva: {nome_arq_excel}")
+            log(f"Planilha salva: {nome_arq_excel}")
 
         if modo in ["download", "ambos"]:
             rep_ids = '1030,1000,1060,1090,1120,1150,1180,1210,1240,1270,1300,1330,1360,1390,1420,1450,1480,0,2030,2000,2060,2090,2120,2150,2180,2210,2240,2270,2300,2330,3030,3000,3060,4030,4000,4060,4090,4120,4150,4180,4210,5030,5000,5060,5090,5120,5150,6030,6000,6090,6120,6150,6180,7030,7000,7045,7060,7090,7120,7150,7180,7210,7240,8030,8000,8060,8095,8120,8155,8180,8210,8240,8270,8300,8335,8360,8390,8420,8450,8480,8510,8540,8545,8570,8575,8600,9030,9000,9045,9060,10045,10000,10030,10060,10090,10095,10120,10150,11030,11000,11060,11020,11090,12030,12000,12060,12090,12120,12150,12180,12210,12240,12270,13030,13000,13045'
@@ -221,11 +228,11 @@ class DownloadManager:
                     
                     if conteudo and len(conteudo) > 1000: 
                         self.file_mgr.salvar_arquivo(conteudo, nome_arq, pasta)
-                        self.escrever_log(pasta, f"OK: {nome_arq}")
+                        log(f"OK: {nome_arq}")
                     else:
-                        self.escrever_log(pasta, f"FALHA: {nome_arq} (Servidor recusou ou Hash inválido)")                
+                        log(f"FALHA: {nome_arq} (Servidor recusou ou Hash inválido)")                
 
                 except Exception as ex:
-                    self.escrever_log(pasta, f"ERRO no item {d['_ID_SEQ']}: {str(ex)}")
+                    log(f"ERRO no item {d['_ID_SEQ']}: {str(ex)}")
 
         return total, pasta
